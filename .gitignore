@@ -93,7 +93,4 @@ lib64
 # Your own project's ignores
 # -------------------------------------------------
 templates/includes/svg.html
-www/*.html
-www/**/*.html
-www/static/css/*
-www/static/js/*
+
