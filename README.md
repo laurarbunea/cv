@@ -1,12 +1,5 @@
-# Xero CSP pattern library [![CircleCI](https://circleci.com/gh/springload/xero-style-guide.svg?style=svg)](https://circleci.com/gh/springload/xero-style-guide)
+# Laura's CV and WIP pattern lib 
 
-> Front-end pattern-library to support the development of the Xero CSP (Custom Success Platform) in Salesforce.
-
-|Important links|
-|---------------|
-|[Zeplin files](https://app.zeplin.io/project/59b9eb846b8d915066bf17a0/dashboard)
-|[Invision](https://projects.invisionapp.com/share/KTDBYDMA2#/screens)
-|[CSP Current build](https://fullcopy-fullcopy.cs67.force.com/s/topiccatalog?language=en_US)
 
 ## Installation
 
@@ -16,8 +9,8 @@ From the command-line:
 
 ```sh
 cd ~/Development/sites/
-git clone git@github.com:springload/xero-style-guide.git
-cd xero-style-guide
+git clone git@github.com:NAMEHERE
+cd REPO
 # Install the required Node and npm versions.
 nvm install
 # Install virtualenv
@@ -69,7 +62,7 @@ They can be called from either a jinja template or from the json content.
 1. Create a new file inside of 'templates/component' with the component name as the file name.
 
 This file will hold an example of the Json structure aswell as the jinja used to render the component. 
-I have created a '[new-component.j2](https://github.com/springload/xero-style-guide/tree/master/templates/components/new-component.j2)' file you can use as a reference to make sure you start with everything you need
+I have created a 'new-component.j2' file you can use as a reference to make sure you start with everything you need
 
 **PLEASE NOTE:** If the component is a full width block element and isn't nested inside of the content container please can you prefix the component with '-block'
 
@@ -107,7 +100,7 @@ I have created a '[new-component.j2](https://github.com/springload/xero-style-gu
 },
 ```
 
-3. If you want to call the component inside a jinja template you need to add it to [includes/components.j2](https://github.com/springload/xero-style-guide/blob/master/templates/includes/components.j2).
+3. If you want to call the component inside a jinja template you need to add it to includes/components.j2.
 
 **PLEASE NOTE:** If you use a dash in the components file name you will have to use an underscore to reference it like shown above
 then you can call the component in your jinja files like this: {{ components.link(api=true) }} If you want to override the dummy data just pass the variables that you want to use instead of api=true
