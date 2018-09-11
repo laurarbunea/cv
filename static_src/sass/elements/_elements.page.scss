@@ -1,0 +1,24 @@
+// ============================================================================
+// Page elements
+// ============================================================================
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    position: relative;
+    @include font-smoothing;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th {
+	text-align: left;
+}

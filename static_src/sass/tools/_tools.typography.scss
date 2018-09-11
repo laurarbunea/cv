@@ -1,0 +1,16 @@
+@mixin font-family($family) {
+    @if ($family == 'sans-serif') {
+        font-family: -apple-system, BlinkMacSystemFont, 'National', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    } @else if ($family == 'serif') {
+        font-family: 'Times New Roman', serif;
+    } @else {
+        @warn '#{$family} is not a valid font-family.'
+    }
+}
+
+@mixin truncate($width: 100%) {
+  max-width: $width;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

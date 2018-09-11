@@ -1,0 +1,11 @@
+// ============================================================================
+// Anchor
+// ============================================================================
+
+//this is used on headings and text elements to make it look like text but with a blue hover
+.anchor--text {
+    color: $color-grey-xdark;
+}
+	.anchor--text:hover {
+        color: $color-page-links;
+    }

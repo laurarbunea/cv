@@ -1,0 +1,40 @@
+{% import "includes/components.j2" as components %}
+
+{% if item.api %}
+
+	{% set item = {
+        "type": "avatar",
+        "profile": {
+            "name": "Jaime Winter",
+            "initials": "JW",
+            "job":"Xero user",
+            "description": "Xero user for 3 years",
+            "location": "Wellington, New Zealand",
+            "image": "",
+            "url": "/",
+            "answer_count": 98,
+            "answer_url": "/pages/discussion/",
+        },
+        "small": false,
+        "class": "",
+    } %}
+
+{% endif %}
+
+
+{% if item.profile.url %}
+    {% set tag = "a" %}
+{% else %}
+    {% set tag = "div" %}
+{% endif %}
+
+<{{ tag }} {% if item.profile.url %}href="{{ item.profile.url }}"{% endif %} class="avatar{% if item.small %} avatar--small{% endif %}{% if item.class %} {{ item.class }}{% endif %}">
+    {% if item.profile.image %}
+        {{ components.image(src=item.profile.image, alt=item.profile.name, class="avatar__img") }}
+    {% else %}
+        <div class="avatar__placeholder">
+            {# Make font size scale with container width by putting the text inside an SVG image wrapper #}
+            <img src="data:image/svg+xml,%3Csvg width='106px' height='40px' viewBox='0 0 106 39' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctext x='53' y='38' font-size='64' font-family='National, Helvetica Neue, Helvetica, Arial, sans-serif' letter-spacing='5' font-weight='500' text-anchor='middle' fill='%23FFFFFF'%3E{{ item.profile.initials }}%3C/text%3E%3C/svg%3E%0A" alt="{{ item.profile.name }}">
+        </div>
+    {% endif %}
+</{{ tag }}>

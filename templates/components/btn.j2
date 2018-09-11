@@ -1,0 +1,48 @@
+{% import "includes/components.j2" as components %}
+
+{%- set icon_position = item.icon_position -%}
+
+{%- set base_class = 'btn' -%}
+
+{# Apply any classes related to button theming #}
+{%- if item.theme -%}
+    {%- set icon_color_class = "u-icon-" + item.theme -%}
+    {%- set button_theme = 'btn--' + item.theme -%}
+{%- endif -%}
+
+{# Determine whether icon is before or after text #}
+{%- if item.icon -%}
+    {% if icon_position == 'icon-last' %}
+        {%- set icon_position_class = 'icon-text--rev' -%}
+    {% else %}
+        {%- set icon_position_class = 'icon-text' -%}
+    {% endif %}
+{%- endif -%}
+
+
+{%- set button_classes = [base_class, button_theme|default('btn--primary'), icon_color_class|default(''), icon_position_class|default(''), item.class|default('')] -%}
+
+<a href="{{ item.url }}" class="{{ button_classes|join(' ') }} {% if item.small %} btn--small{% endif %}">
+    {%- if item.icon and icon_position == 'icon-first' -%}
+
+        {% if item.icon %}
+            {{ components.icon(icon=item.icon, class=icon_color_class|default('u-current-icon')) }}
+        {%- endif -%}
+
+    {%- endif -%}
+
+    {% if item.text %}
+        {{ item.text }}
+    {% else %}
+        Click me
+    {% endif %}
+
+
+    {%- if item.icon and icon_position == 'icon-last' -%}
+        {% if item.icon == 'caret-d' %}
+            <div class="collapse__arrow u-current-css-arrow-alt"></div>
+        {%- else -%}
+            {{ components.icon(icon=item.icon, class=icon_color_class|default('u-current-icon')) }}
+        {%- endif -%}
+    {%- endif -%}
+</a>

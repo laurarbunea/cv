@@ -1,0 +1,18 @@
+
+{% if item.api %}
+
+    {% set item = {
+        "type":"icon",
+        "title":"{{item.title}}",
+        "color":"{{item.color}}",
+        "size":"{{item.size}}",
+        "icon":"{{item.icon}}",
+        "class":"{{item.class}}"
+    } %}
+
+{% endif %}
+
+<svg class="icon {% if item.color %} icon--{{ item.color }}{% endif %} {% if item.size %}{{ item.size }}{% else %} icon--m {% endif %} {% if item.class %} {{ item.class }}{% endif %} {% if item.icon %} icon-{{ item.icon }} {% endif %}"{% if not item.title %} aria-hidden="true" role="presentation"{% endif %}>
+    {% if item.title %}<title>{{ item.title }}</title>{% endif %}
+    <use xlink:href="#icon-{{ item.icon }}"{% if item.title %} aria-hidden="true" role="presentation"{% endif %}></use>
+</svg>

@@ -1,0 +1,126 @@
+// ============================================================================
+// Table
+// ============================================================================
+$color-table-border: $color-grey-light;
+$color-table-stripe-green: $color-grey-xlight;
+$td-padding: .75em;
+$color-light-separator: $color-grey-light;
+
+.table {
+    border: 1px solid $color-light-separator;
+    background-color: $color-white;
+}
+
+    // Table sections
+    .table__head {
+        border-bottom: solid 1px $color-light-separator;
+    }
+
+    .table__foot {
+        border-top: solid 1px $color-light-separator;
+    }
+
+        // Table cells
+        .table__cell,
+        .table__header-cell {
+            padding: $td-padding;
+            border-right: solid 1px $color-light-separator;
+            vertical-align: top;
+        }
+
+.table__row--border {
+    border-bottom: 1px solid  $color-light-separator;
+}
+
+// ============================================================================
+// Tables
+// Rows and cells are full width and stack on top of each other
+// at small sizes. We retain some header context by hiding the header and
+// adding data attribute content to pseudo elements.
+// ============================================================================
+
+
+.table--stacked {
+	// Table rows get divider borders when stacked so remove bottom from table
+	@include small {
+		border-bottom: 0;
+	}
+}
+
+	// Hide table headers on small screens since we are stacking rows
+	.table--stacked .table__head {
+		@include small {
+			display: none;
+		}
+	}
+
+	// Add a divider line to rows when they're stacked
+    .table--stacked .table__row {
+        @include small {
+			display: block;
+            border-bottom: 1px solid $color-light-separator;
+            padding-bottom: $td-padding;
+        }
+    }
+
+	// Make table cells full width
+	.table--stacked .table__cell {
+		@include small {
+			display: block;
+			width: 100%;
+			padding-bottom: 0;
+			border-right: 0;
+		}
+	}
+
+	// Make first column act more like a heading
+	.table--stacked .table__cell:first-child {
+
+		@include small {
+			font-weight: bold;
+		}
+	}
+
+	// Add corresonding table header content to each cell as a
+	// pseudo element so we don't lose column context
+	.table--stacked .table__cell::before {
+		@include small {
+			display: block;
+			width: 100%;
+			content: attr(data-header);
+			font-weight: 400;
+			opacity: .75;
+			font-size: .875em;
+		}
+	}
+
+// ============================================================================
+// Striped coloured Tables
+// ============================================================================
+
+
+// Odd rows need striped color but only in the table body section
+.table--striped .table__body .table__row:nth-child(odd),
+.table--striped tbody .table__row:nth-child(odd) {
+    background-color: $color-table-stripe-green;
+}
+
+// Sometimes we only want stripes from medium and up, ie responsive
+// tables don't want stripes at small sizes otherwise we have to create
+// a rather specific override to remove
+.table--striped\@medium .table__body .table__row:nth-child(odd),
+.table--striped\@medium tbody .table__row:nth-child(odd) {
+    @include medium {
+        background-color: $color-table-stripe-green;
+    }
+}
+
+.table--striped\+borders .table__row {
+    border-bottom: solid 1px $color-light-separator;
+
+    @include medium {
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+}

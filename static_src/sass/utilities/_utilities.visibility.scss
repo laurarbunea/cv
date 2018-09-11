@@ -1,0 +1,45 @@
+.u-hidden {
+    display: none;
+}
+
+.u-inline-block\@xsmall {
+    @include xsmall {
+        display: inline-block;
+    }
+}
+
+.u-hidden\@xsmall {
+    @include xsmall {
+        display: none;
+    }
+}
+
+.u-hidden\@small {
+    @include small {
+        display: none;
+    }
+}
+
+.u-hidden\@medium {
+    @include medium {
+        display: none;
+    }
+}
+
+.u-hidden\@small {
+    @include small {
+        display: none;
+    }
+}
+
+// Hidding elements on Touch devices
+.touch .u-hidden-touch {
+    display: none;
+    visibility: hidden;
+}
+
+// Hidding elements on Non Touch screens
+.no-touch .u-hidden-no-touch {
+    display: none;
+    visibility: hidden;
+}

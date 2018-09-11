@@ -1,0 +1,32 @@
+{% import "includes/macros.j2" as macros %}
+
+{%- if item.api -%}
+
+    {%- macro test_children() -%}
+        <ul>
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+        </ul>
+    {%- endmacro -%}
+
+    {% set children = test_children() %}
+
+	{% set item = {
+        "type": "popover",
+        "class": "",
+        "stacked": false,
+        "no_top": false,
+        "no_bottom": false,
+        "data": []
+	} %}
+
+{%- endif -%}
+
+<div class="section{% if item.class %} {{ item.class }}{% endif %}{% if item.stacked %} section--stacked{% endif %}{% if item.no_top %} section--no-top{% endif %}{% if item.no_bottom %} section--no-bottom{% endif %}">
+	{% if children %}
+		{{ children }}
+	{% else %}
+		{{ macros.parse_blocks( item.data ) }}
+	{% endif %}
+</div>

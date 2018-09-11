@@ -1,0 +1,68 @@
+{% import "includes/macros.j2" as macros %}
+{% import "includes/components.j2" as components %}
+
+{% if item.api %}
+
+{% set item = {
+    "type": "heading-breadcrumb-text-set",
+    "href":"clickme",
+    "title": "How do I change employees' super fund?",
+    "data" :[
+        {
+            "component":"breadcrumb"
+        }
+    ]
+} %}
+
+{% endif %}
+
+<div>
+
+    <h3>
+        {% if item.href %}
+            <a href='{{item.href}}' class='anchor--text'>
+        {% endif %}
+
+        {{item.title}}
+
+        {% if item.href %}
+            </a>
+        {% endif %}
+    </h3>
+
+    {% for component in item.data %}
+
+        <span class="title__subtitle">
+
+            {% if component.component == "badge" %}
+                {{ components.badge(theme=component.theme, text=component.text)}}
+            {% endif %}
+
+            {% if component.component == "breadcrumb" %}
+
+                {{ components.breadcrumb(api=true)}}
+
+            {% endif %}
+        </span>
+
+    {% endfor %}
+
+    {#{% if item.data %}
+        <ul class="u-list-inline">
+            {% for i in item.data %}
+                <li>
+                    {{  macros.parse_blocks([ i ]) }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}#}
+
+
+    {% if item.text %}
+        <div class="grid grid--col-spacing">
+            <div class="width-full width-3/4@medium">
+            {{ item.text}}
+            </div>
+        </div>
+    {% endif %}
+</div>

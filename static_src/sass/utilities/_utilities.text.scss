@@ -1,0 +1,30 @@
+.u-text-uppercase { text-transform: uppercase !important; }
+
+.u-text-underline { text-decoration: underline !important; }
+
+.u-text-small { font-size: 12px; }
+
+// text aligns
+.u-text-left { text-align: left !important; }
+
+.u-text-right { text-align: right !important; }
+
+.u-text-center { text-align: center !important; }
+
+// * 1. Ensures text doesn't wrap and break your layout
+// * 2. Trigger overflow behavior
+// * 3. Truncate the text
+.u-text-truncate { @include truncate; }
+
+.u-hyphen {
+    @include xsmall {
+        // These are technically the same, but use both
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        // This is the dangerous one in WebKit, as it breaks things wherever
+        // Adds a hyphen where the word breaks, if supported (No Blink)
+        word-break: break-all;
+        // Instead use this non-standard one:
+        hyphens: auto;
+    }
+}

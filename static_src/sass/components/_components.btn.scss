@@ -1,0 +1,126 @@
+// ============================================================================
+// Button
+// ============================================================================
+$font-line-height-buttons: rem(40);
+$padding-btn: $spacing-xl;
+
+.btn {
+    display: inline-block;
+    vertical-align: middle;
+    font: inherit;
+    text-align: center;
+    margin: 0;
+    cursor: pointer;
+    background-color: transparent;
+    color: inherit;
+
+    padding-top: 0;
+    padding-right: $padding-btn;
+    padding-bottom: 0;
+    padding-left: $padding-btn;
+    line-height: $font-line-height-buttons;
+
+    border-color: transparent;
+    border-style: solid;
+    border-width: 2px;
+    font-size: rem(18);
+    font-weight: $font-weight-medium;
+    border-radius: $base-radius;
+    min-width: 91px;
+
+    font-family: $font-family;
+
+    @include truncate;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &[disabled],
+    &.btn--disabled {
+        pointer-events: none;
+        cursor: default;
+        opacity: .5;
+    }
+
+}
+
+.btn + .btn {
+    margin-left: $spacing-xs;
+
+    @include medium {
+        margin-left: $spacing;
+    }
+}
+
+//size modifiers
+//-----------------------------------------------''
+.btn--small {
+    padding-right: $padding-btn / 1.5;
+    padding-left: $padding-btn / 1.5;
+    line-height: rem(32);
+    font-size: rem(16);
+}
+
+.btn--block {
+    width: 100%;
+}
+
+.btn--block\@small {
+    @include small {
+        width: 100%;
+    }
+}
+
+.btn--primary {
+     background-color: $color-white;
+     color: $color-brand-primary;
+     border-color: $color-brand-primary;
+
+     &:hover {
+         background-color: lighten($color-brand-primary, 45%);
+     }
+}
+
+.btn--secondary {
+    background-color: $color-brand-secondary;
+    color: $color-white;
+    border-color: $color-brand-secondary;
+
+     &:hover {
+        background-color: darken($color-brand-secondary, 10%);
+        border-color: darken($color-brand-secondary, 10%);
+     }
+}
+
+.btn--tertiary {
+    background-color: $color-brand-tertiary;
+    color: $color-white;
+    border-color: $color-brand-tertiary;
+
+    &:hover {
+        background-color: darken($color-brand-tertiary, 10%);
+        border-color: darken($color-brand-tertiary, 10%);
+    }
+}
+
+.btn--inverse {
+    background-color: $color-grey-xdark;
+    color: $color-white;
+    border-color: $color-white;
+
+     &:hover {
+        background-color: darken($color-grey-xdark, 10%);
+        border-color: darken($color-grey-xdark, 10%);
+    }
+}
+
+.btn--white {
+    background-color: $color-white;
+    color: $color-grey-xdark;
+    border-color: $color-grey-xdark;
+
+    &:hover {
+        background-color: darken($color-white, 15%);
+    }
+}

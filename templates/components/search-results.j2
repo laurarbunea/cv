@@ -1,0 +1,79 @@
+
+{% import "includes/macros.j2" as macros %}
+{% import "includes/components.j2" as components %}
+
+
+{% if item.api %}
+
+    {% set item = {
+        "type":"search-results",
+        "results": [
+            {
+                "title":"Payroll in Xero in Australia",
+                "text":"Xero Auto Super is a SuperStream-certified product available on the Xero Premium 5 price plan above. It allows employers to process one payment for multiple superannuation.",
+                "data" :[
+                    {
+                        "component":"breadcrumb",
+                    },
+                    {
+                        "component":"badge",
+                        "text": "Best Answer",
+                        "theme": "green",
+                    }
+                ]
+            },
+            {
+                "title":"How can I invite Xero Support into my practice?",
+                "data" :[
+                    {
+                        "component":"breadcrumb"
+                    },
+                    {
+                        "component":"badge",
+                        "text": "Best Answer",
+                        "theme": "green",
+
+                    }
+                ]
+            }
+        ]
+    } %}
+
+{% endif %}
+
+<div class='component'>
+
+{% for object in item.results %}
+
+    <div class="search-results">
+
+        <h3>
+            <a href='#' class='anchor--text'>
+                {{object.title}}
+            </a>
+        </h3>
+
+        {% for subtitle in object.data %}
+
+            <span class="title__subtitle">
+
+                {#{% if subtitle.component == "badge" %}
+                    {{ components.badge(theme=subtitle.theme, text=subtitle.text)}}
+                {% endif %}#}
+
+                {% if subtitle.component == "breadcrumb" %}
+
+                    {{ components.breadcrumb(api=true)}}
+
+                {% endif %}
+            </span>
+
+        {% endfor %}
+
+        {{ components.p( data=object.text) }}
+
+    </div>
+
+{% endfor %}
+
+</div>

@@ -1,0 +1,85 @@
+{
+    "meta": {
+        "template": "case.j2",
+        "title": "2.4 Discussion",
+        "question_block": false,
+        "page_title": {
+            "heading": "Why did auto super batch payment fail?",
+            "data": [
+                {
+                    "component": "badge",
+                    "text": "Best Answer",
+                    "theme": "green"
+                },
+                {
+                    "component": "pipe"
+                },
+                {
+                    "component": "breadcrumb",
+                    "data": [
+                        {
+                            "icon": "discussion",
+                            "link": "Discussions"
+                        },
+                        {
+                            "link": "Payroll"
+                        }
+                    ]
+                },
+                {
+                    "component": "pipe"
+                },
+                {
+                    "component": "info",
+                    "text": "5 replied"
+                }
+            ]
+        }
+    },
+    "data": [
+        {
+            "type": "rich-text",
+            "data": [
+                "Hi,",
+                "I submitted my first auto super payment last week and today I saw that it's listed as failed in Payroll. When I click the link all it says is:",
+                "Processing Failure",
+                "ECV-IV-22107",
+                "My working theory based on what I can discern from the web/video notes - is that Superannuation funds need USIs, instead of SPINs. Is this right?",
+                "I haven't received any other notifications from Xero - can anyone provide advice on failure codes for Auto Super payments?"
+            ]
+        },
+        {
+            "type": "grid",
+            "col_spacing": true,
+            "row_spacing": true,
+            "width":"1/2",
+            "columns": [
+                {
+                    "data": [
+                        {
+                            "type": "profile-popover",
+                            "profile": {
+                                "name": "Marcus Whitler",
+                                "image": "placeholder.jpg",
+                                "initials": "MW",
+                                "job": "Xero user",
+                                "description": "Xero user for 3 years",
+                                "location": "Wellington, New Zealand",
+                                "answer_count": 98,
+                                "url": "/pages/profile/",
+                                "answer_url": "/pages/discussion/"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "type": "overflow"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

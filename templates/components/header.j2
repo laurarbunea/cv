@@ -1,0 +1,97 @@
+{% import "includes/macros.j2" as macros %}
+{% import "includes/components.j2" as components %}
+
+{%- if item.api -%}
+
+	{% set item = {
+        "type": "header",
+        "user": {
+            "name": "Jaime",
+            "initials": "JW",
+        },
+        "title": "",
+	} %}
+
+{%- endif -%}
+
+{%- macro header_menu() -%}
+<div class="header__menu">
+    <a href="/pages/topics/" class="header__link">
+        <span class="icon-text">
+            {{ components.icon(icon="guide", color="orange", size="icon--l") }}
+            <span><span class="u-hidden@small">All </span>topics</span>
+        </span>
+    </a>
+
+    {% if item.user %}
+        <a href="/pages/profile/" class="header__profile">
+            {{ components.avatar(small=True, profile=item.user) }}
+            {{ components.badge(theme="orange-circle", text="5")}}
+        </a>
+        {{ components.popover(position="top: 50px; right: 0;", arrow_position="right: 10px;", menu=[
+            { "label": "My cases", "href": "/pages/case/", "notifications": 1 },
+            { "label": "My discussions", "href": "/pages/discussions/", "notifications": 0 },
+            { "label": "Bookmarked", "href": "/", "notifications": 0 },
+            { "label": "Profile", "href": "/pages/profile/", "notifications": 0 },
+            { "label": "Sign out", "href": "/", "notifications": 0 },
+        ]) }}
+    {% else %}
+        {{ components.btn(text="Login", small=True, url="/pages/home/authenticated/") }}
+    {% endif %}
+</div>
+{%- endmacro %}
+
+{% set search = components.search_bar(
+    placeholder="Search for a topic or ask a question",
+    small=True,
+    suggestions=[
+        {
+            "title": "Topics",
+            "suggestions": [
+                { "label": "Reconciliation & Record payments", "href": "/", "icon": "guide" },
+                { "label": "Bank accounts & feeds", "href": "/", "icon": "discussion" },
+            ],
+        },
+    ])
+%}
+
+<div class="header{% if item.title %} header--large{% endif %}">
+	<div class="wrapper" >
+        <div class="grid">
+
+            <div class="width-2/10 width-1/2@xsmall width-1/4@medium">
+                <a href="/" class="header__logo">
+                    {{ components.icon(icon="xero-logo-blue", size="icon--xxl") }}
+                    <p class="header__title u-font-primary u-text-uppercase u-text-color-blue-dark u-font-medium">CSP</p>
+                </a>
+            </div>
+
+            <div class="width-1/2@xsmall u-hidden u-inline-block@xsmall">
+                {{ header_menu() }}
+            </div>
+
+            <div class="width-5/10 width-full@xsmall width-2/4@medium">
+                {% if not item.title %}
+                    {{ search }}
+                {% endif %}
+            </div>
+
+            <div class="width-3/10 width-1/4@medium u-hidden@xsmall">
+                {{ header_menu() }}
+            </div>
+        </div>
+    </div>
+    {% if item.title %}
+        <div class="wrapper">
+            <div class="grid">
+                <div class="width-full">
+                    <div class="header__masthead">
+                        <h2 class="header__masthead__title">{{ item.title }}</h2>
+
+                        {{ search }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</div>

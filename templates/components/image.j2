@@ -1,0 +1,11 @@
+{% if item.api %}
+
+	{% set item = {
+		"type":"image",
+        "src": "/static/images/placeholder.jpg",
+        "alt": "",
+	} %}
+
+{% endif %}
+
+<img src="{% if item.src %}{{ item.src }}{% else %}/static/images/placeholder.jpg{% endif %}" alt="{{ item.alt }}" class="u-img--responsive {% if item.class %}{{ item.class }}{% endif %}" />

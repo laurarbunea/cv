@@ -1,0 +1,26 @@
+{% import "includes/macros.j2" as macros %}
+{% import "includes/components.j2" as components %}
+
+{% if item.api %}
+
+	{% set item = {
+		"type":"search-results-more",
+		"theme":"enhance",
+		"heading":"People also searched for..."
+	} %}
+
+{% endif %}
+
+{% call components.container(theme="enhance") %}
+
+    <div class="search-results-more-block ">
+
+        <div class="[ width-full ]">
+            {{ components.heading(level="h2", data=item.heading, class="u-text-color-grey-xdark") }}
+        </div>
+
+        {{ components.search_result_terms(api=true) }}
+
+    </div>
+
+{% endcall %}

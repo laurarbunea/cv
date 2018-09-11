@@ -1,0 +1,52 @@
+$field-spacing--small: $spacing-s;
+$field-spacing: $spacing-s * 3;
+$suggestions-spacing: $spacing-xl - $spacing-xxxs;
+
+.field-autocomplete {
+    position: relative;
+    max-width: 780px;
+    background-color: $color-white;
+}
+
+    .field-autocomplete--small {
+        max-width: 600px;
+    }
+
+    .error > .field-autocomplete .field-autocomplete__input {
+        border-color: $color-field-error;
+    }
+
+
+.field-autocomplete__dropdown {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: $suggestions-spacing $field-spacing--small;
+    background-color: $color-white;
+    border-bottom-left-radius: $base-radius;
+    border-bottom-right-radius: $base-radius;
+    z-index: $dropdown-z-index;
+
+    @include medium {
+        padding: $suggestions-spacing $field-spacing;
+    }
+}
+
+@mixin field-autocomplete-input--active {
+    border-color: $color-white;
+    border-bottom-color: $color-grey-light;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: $dropdown-box-shadow;
+
+    + .field-autocomplete__dropdown {
+        display: block;
+        box-shadow: $dropdown-box-shadow;
+    }
+}
+
+// Remove the :focus to help debugging the active component styles.
+.field-autocomplete__input:focus {
+    @include field-autocomplete-input--active;
+}

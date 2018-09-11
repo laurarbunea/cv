@@ -1,0 +1,52 @@
+{% import "includes/macros.j2" as macros %}
+{% import "includes/components.j2" as components %}
+
+{% if item.dropdown %}
+    {% set item = item.dropdown %}
+{% endif %}
+
+{%- if item.api -%}
+
+	{% set item = {
+        "type": "field-dropdown",
+        "placeholder": "Select topic",
+        "label": "Topic",
+        "help_text": "",
+        "error": "",
+        "class": "",
+        "filter": false,
+        "options": [
+            { "label": "Set up your organisation with payroll", "value": "1" },
+            { "label": "Payroll in Xero in Australia", "value": "2" },
+            { "label": "How superannuation in Xero works", "value": "3" },
+            { "label": "Why did auto super batch payment fail?", "value": "4" },
+            { "label": "Getting an Auto Super batch payment failure code", "value": "5" },
+        ],
+	} %}
+
+{%- endif -%}
+
+<label class="form-field{% if item.filter %} form-field--inline{% endif %}{% if item.class %} {{ item.class}}{% endif %}{% if item.error %} error{% endif %}">
+    {% if item.label %}
+        <span class="form-field__label">{{ item.label }}</span>
+    {% endif %}
+
+    {% if item.help_text %}
+        <span class="form-field__help">{{ item.help_text }}</span>
+    {% endif %}
+
+    <div class="field-dropdown{% if item.filter %} field-dropdown--filter{% endif %}">
+        <select>
+            {% if item.placeholder %}
+                <option value="" disabled selected>{{ item.placeholder }}</option>
+            {% endif %}
+            {% for option in item.options %}
+                <option value="{{ option.value }}">{{ option.label }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    {% if item.error %}
+        <span class="form-field__error">{{ item.error }}</span>
+    {% endif %}
+</label>

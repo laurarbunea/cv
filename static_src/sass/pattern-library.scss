@@ -1,0 +1,225 @@
+// -----------------------------------------------------------------------------
+// Pattern library
+// -----------------------------------------------------------------------------
+
+
+@import 'tools';
+//@import 'tokens';
+@import 'settings';
+@import 'elements';
+@import 'container';
+@import 'components';
+@import 'utilities';
+@import 'theming/theming';
+
+
+$color-styleguide: $color-footer;
+$color-styleguide-soft: $color-white-off;
+$color-styleguide-grey: $color-grey-light;
+$color-code: $color-grey-xlight;
+$color-styleguide-highlight: lighten(#EC6C02, 10%);
+
+.xero-csp {
+    box-sizing: border-box;
+    font-family: $font-family-secondary;
+    font-size: ($base-font-size / 16px) * 1em;
+    line-height: $base-line-height / $base-font-size;
+    background-color: $color-page-background;
+    color: $color-page-text;
+    -webkit-tap-highlight-color: transparent;
+    height: 100%;
+    min-height: 100%;
+}
+
+.pattern-library {
+    padding-top: 80px;
+    :target { padding-top:120px; }
+    .pattern-library__navigation {
+        display: block;
+        padding:1.5rem 0 1rem 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 5;
+        border-bottom: 1px solid $color-black;
+    }
+
+    .sg-t-primary {
+        background-color: $color-white;
+        color: $color-styleguide;
+    }
+
+    .sg-t-secondary {
+        background-color: $color-styleguide-soft;
+        color: $color-styleguide;
+    }
+
+    .t-styleguide--bg {
+        background-color: $color-styleguide;
+        color: $color-white;
+    }
+
+    .sg-text-color-highlight {  color: $color-styleguide-highlight; }
+
+    @include xsmall {
+        .breakpoint-on-x-small {
+            background-color: $color-styleguide-highlight;
+            color: $color-white;
+        }
+    }
+
+    @include small {
+        .breakpoint-on-small {
+            background-color: $color-styleguide-highlight;
+            color: $color-white;
+        }
+    }
+
+    @include medium {
+        .breakpoint-on-medium {
+            background-color: $color-styleguide-highlight;
+            color: $color-white;
+        }
+    }
+
+    @include large {
+        .breakpoint-on-large {
+            background-color: $color-styleguide-highlight;
+            color: $color-white;
+        }
+    }
+
+
+    pre.prettyprint {
+        font-family: Menlo, 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', Monaco, Consolas, monospace;
+        font-size: 12px;
+        line-height: 1.5;
+        border-color: $color-code !important;
+        margin: .5rem;
+        padding: 0;
+        margin-top: 0;
+        border-top: 1px solid $color-white !important;
+    }
+
+    .pre {
+    	position: relative;
+    	padding: 20px 10px 10px;
+    	background-color: $color-page-text;
+    	color: $color-white;
+
+    	&::before {
+            position: absolute;
+    		font-weight: bold;
+            top: 0;
+            color: $color-styleguide;
+            content: 'json: ';
+        }
+    }
+
+    .pattern-library__header { margin-bottom: 20px; }
+
+    .pattern-library__footer { margin-top: 20px; }
+
+    .t-grid-debug {
+        text-align: center;
+        //.grid--col-spacing > * { background-color: $color-styleguide; }
+
+        p {
+            background-color: $color-styleguide-soft;
+        }
+    }
+
+    .sg-code-container {
+        position: relative;
+        padding: 40px 10px 10px;
+        background-color: $color-white;
+
+        &::before {
+            position: absolute;
+            padding: .5em;
+            background-color: $color-code;
+            right: 0;
+            color: $color-grey-mid;
+            //padding: 5px;
+            font-weight: bold;
+            font-size: 14px;
+            top: 0;
+            //color: $color-styleguide;
+            content: 'rendered view';
+        }
+    }
+
+    .sg-component-bg {
+         background-color: $color-code;
+    }
+
+    .sg-component {
+        border: 1px solid $color-code;
+        margin-top: 30px;
+        box-shadow: $popover-box-shadow;
+    }
+
+    .sg-component-container {
+        margin-bottom: 30px;
+    }
+
+    .sg-code-anchor {
+        background-color: $color-code;
+        padding: .5rem 2rem;
+        font-size: 14px;
+    }
+
+    .sg-collapse-anchor {
+        @include clearfix;
+        background-color: $color-grey-xdark;
+        color: $color-white;
+        padding: 1rem 2rem;
+        border-bottom: 1px solid $color-grey-light;
+        font-size: 16px;
+
+        &:hover {
+            background-color: darken($color-grey-xdark, 15%);
+            color: $color-styleguide !important;
+        }
+
+        .collapse__label {
+            color: $color-white;
+        }
+
+        .collapse__arrow {
+            right: $spacing;
+            color: $color-white;
+        }
+    }
+
+@mixin component-badge {
+    display: inline-block;
+    margin-left: 1rem;
+    padding-top: 0;
+    padding-right: $spacing-s;
+    padding-bottom: 0;
+    padding-left: $spacing-s;
+    vertical-align: middle;
+    text-align: center;
+    font-family: $font-family;
+    line-height: 20px;
+    letter-spacing: .2px;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    font-size: rem(14);
+    border-radius: $base-radius;
+    color: $color-brand-primary;
+    border-color: currentcolor;
+}
+
+    .sg-development {
+        .collapse__label::after {
+            @include component-badge;
+            content: 'Development';
+        }
+    }
+
+    .sg-inset-block {
+        padding: 2rem;
+    }
+}

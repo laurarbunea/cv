@@ -1,0 +1,12 @@
+{
+    "meta": {
+        "template": "one-col.j2",
+        "title": "0.0 Error"
+    },
+    "data": [
+        {
+            "type": "error-block",
+            "api": true
+        }
+    ]
+}

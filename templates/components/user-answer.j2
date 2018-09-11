@@ -1,0 +1,72 @@
+{# include the components and the macro files #}
+{% import "includes/macros.j2" as macros %}
+{% import "includes/components.j2" as components %}
+{% if item.answer %}
+	{% set item = item.answer %}
+{% endif %}
+
+{% if item.api %}
+
+	{% set item = {
+		"type":"component-name",
+		"title":"I am a title",
+		"profile":{
+	        "name": "Marcus Whitler",
+	        "image": "placeholder.jpg",
+	        "initials": "MW",
+	        "job": "Xero user",
+	        "description": "Xero user for 3 years",
+	        "location": "Wellington, New Zealand",
+	        "answer_count": 98,
+	        "url": "/pages/profile/",
+	        "answer_url": "/pages/discussion/"
+	    },
+	    "answer":[
+			"Hi Jamie - We fixed this issue for all our clients last year by making sure that all super funds we set up in Xero have USIs rather than SPINs."
+	    ],
+	    "date":"3 days ago"
+	} %}
+
+{% endif %}
+
+{% call components.inset_block(theme="content", class="user-answer component" ) %}
+
+	<div class='user-answer'>
+
+		<div class="[ grid grid--row-spacing ]">
+
+			<div class="[ width-3/4 ]">
+
+				{{ components.profile_popover(profile=item.profile) }}
+
+			</div>
+
+			<div class="[ width-1/4 ] u-align-right">
+
+				{{ components.overflow(profile=item.profile) }}
+
+			</div>
+
+		</div>
+
+		<div class="[ grid grid--row-spacing ]">
+
+			<div class="[ width-full ]">
+
+			    {% for answer in item.answer %}
+					{{ components.p(data=answer) }}
+			    {% endfor %}
+
+		    </div>
+
+		    <div class="[ width-full ] u-clear">
+
+				<p class='u-text-color-grey-dark u-font-primary'>{{item.date}}</p>
+
+			</div>
+
+		</div>
+
+	</div>
+
+{% endcall %}

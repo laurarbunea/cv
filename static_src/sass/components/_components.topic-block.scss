@@ -1,0 +1,4 @@
+.topic-block__subheading {
+    padding-bottom: $spacing-l;
+    @include font-smoothing(false);
+}

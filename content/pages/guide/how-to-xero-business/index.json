@@ -1,0 +1,49 @@
+{
+    "meta": {
+        "template": "guide.j2",
+        "title": "1.2.3 How to - xero business"
+    },
+    "data": [
+        {
+            "type": "overview",
+            "api":true
+        },
+        {
+            "type": "rich-text",
+            "data":[
+                {
+                    "type":"heading",
+                    "level":"h3",
+                    "data":"Privacy and Security"
+                },
+                {
+                    "type":"list",
+                    "api":true
+                }
+            ]
+        },
+        {
+            "type": "rich-text",
+            "data":[
+                {
+                    "type":"heading",
+                    "level":"h3",
+                    "data":"Privacy and Security"
+                },
+                {
+                    "type":"list-ordered",
+                    "api":true
+                }
+            ]
+        },
+        {
+            "type": "whats-next",
+            "api":true
+        },
+        {
+            "type": "feedback-buttons",
+            "api":true
+        }
+
+    ]
+}

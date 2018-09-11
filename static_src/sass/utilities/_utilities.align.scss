@@ -1,0 +1,46 @@
+
+// margin center
+.u-align-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
+// floats
+.u-align-left { float: left !important; }
+.u-align-right { float: right !important; }
+
+.u-clear {
+    clear: both !important;
+    overflow: hidden;
+}
+
+//vertical positioning
+.u-align-top { vertical-align: top; }
+.u-align-middle { vertical-align: middle; }
+.u-align-baseline { vertical-align: baseline; }
+.u-align-bottom { vertical-align: bottom; }
+
+
+.u-align-bottom { bottom: 0; }
+.u-align-top { top: 0; }
+
+.u-align-bottom-left {
+    bottom: 0;
+    left: 0;
+}
+
+.u-align-bottom-right {
+    bottom: 0;
+    right: 0;
+}
+
+.u-align-top-left {
+    top: 0;
+    left: 0;
+}
+
+.u-align-top-right {
+    top: 0;
+    right: 0;
+}

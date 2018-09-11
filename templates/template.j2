@@ -1,0 +1,139 @@
+{% import "includes/components.j2" as components %}
+{% import "includes/macros.j2" as macros %}
+<!DOCTYPE html>
+<html class="no-js xero-csp" lang="en-nz">
+<head>
+    <meta charset="utf-8">
+    <title>{{meta.title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script>
+        document.documentElement.className = document.documentElement.className.replace("no-js", "js");
+    </script>
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="/static/css/styles.css">
+    {% endblock %}
+    <!-- Style block for tabbing outline in accessible way -->
+    <style class="accessTab"></style>
+    <link href="https://fonts.googleapis.com/css?family=Martel:800,200" rel="stylesheet">
+</head>
+<body class='{% block page_class %}{% endblock %}'>
+    <div style="display:none">
+        {% include "includes/svg.html" ignore missing %}
+    </div>
+
+   {% block navigation %}
+    {% endblock %}
+
+   {% block page %}
+
+        {#{% block sub_navigation %}
+
+            {% if meta.children %}
+
+                <div class='[ t-inverse t-inverse--bg ]' >
+
+                    <div class='[  wrapper ] '>
+
+                        <div class='[  gutters ]' >
+
+                            <div class='[  ]' >
+
+                                <ul class='u-list-inline '>
+
+                                    <li>
+                                        Sub pages:
+                                    </li>
+
+                                    {% for page in meta.children %}
+
+                                        <li>
+                                            <a href='{{page.url}}' class='btn btn--small btn--white'>{{page.title}}</a>
+                                        </li>
+
+                                    {% endfor %}
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            {% endif %}
+
+        {% endblock %}#}
+
+        {% block header %}
+
+            {% if meta.user is defined %}
+                {% set user = meta.user %}
+            {% else %}
+                {% set user = {
+                    "name": "Jamie",
+                    "initials": "JW",
+                } %}
+            {% endif %}
+
+            {{ components.header(user=user, title=meta.header_title) }}
+
+        {% endblock %}
+
+        {% block content %}
+
+            <div class="content {{data.banner_class}}" role="main">
+
+                {{ macros.parse_blocks( data ) }}
+
+            </div>
+
+           <!--  <p>related: {{meta.related}}</p> -->
+
+
+            {#{% for page in meta.related %}
+
+                <p>page: {{page}}</p>
+
+            {% endfor %}#}
+
+
+            {#{% for page in meta.children %}
+
+                 <p>page 1:{{page}}</p>
+
+            {% endfor %}#}
+
+              {#{% for section in sections %}
+
+                <div class="{{section.banner_class}}" id="{{section.anchor}}">
+
+                    {{ macros.parse_blocks( section ) }}
+
+                </div>
+
+            {% endfor %}#}
+
+        {% endblock %}
+
+        {% block footer %}
+
+            {% if meta.user is defined %}
+               {{ components.footer(user=false) }}
+            {% else %}
+                 {{ components.footer(api=true) }}
+            {% endif %}
+
+        {% endblock %}
+
+
+    {% endblock %}
+
+    <script src="/static/js/site.js"></script>
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</body>
+</html>

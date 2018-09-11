@@ -1,0 +1,62 @@
+{% import "includes/macros.j2" as macros %}
+{% import "includes/components.j2" as components %}
+
+{%- if item.api -%}
+
+    {% set profile = {
+        "name":"Marcus Whitler",
+        "initials": "MW",
+        "job":"Xero user",
+        "description": "Xero user for 3 years",
+        "location": "Wellington, New Zealand",
+        "answer_count": 98,
+        "answer_url": "/pages/discussion/",
+    } %}
+
+    {%- macro test_children() -%}
+        <h3>The popover can contain free-form content</h3>
+        <ul>
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+        </ul>
+    {%- endmacro -%}
+
+    {% set children = test_children() %}
+
+    {# position is meant to be set in JavaScript, based on the position of the popover trigger. #}
+	{% set item = {
+        "type": "popover",
+        "children": children,
+        "open": True,
+        "position": "position: relative;",
+        "arrow_position": "left: 30px;",
+        "menu": [],
+	} %}
+
+{%- endif -%}
+
+<div class="popover{% if item.open %} popover--open{% endif %}" aria-hidden="true" style="{{ item.position }}">
+    <span class="popover__arrow" aria-hidden="true" style="{{ item.arrow_position }}"></span>
+    <span class="popover__arrow" aria-hidden="true" style="{{ item.arrow_position }}"></span>
+    {% if children %}
+        <div class="popover__content">
+            {{ children }}
+        </div>
+    {% elif item.menu %}
+        <nav>
+            <ul class="popover__menu">
+                {% for link in item.menu  %}
+                    <li class="popover__menu-item">
+                        <a class="popover__menu-link" href="{{ link.href }}">
+                            <span>{{ link.label }}</span>
+                            {% if link.notifications %}
+                                {{ components.badge(text=link.notifications, theme="orange-circle") }}
+                            {% endif %}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    {% endif %}
+</div>

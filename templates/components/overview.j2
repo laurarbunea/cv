@@ -1,0 +1,34 @@
+{% import "includes/macros.j2" as macros %}
+{% import "includes/components.j2" as components %}
+
+{% if item.api %}
+
+	{% set item = {
+        "type": "overview",
+        "data": [
+            "A batch payment failure code is usually indicates an issue with SPINS and USIs (the two different kinds of supannyation identification number) or ClickSuper.",
+            "Most people can resolve this issue by running the checks below"
+        ],
+        "icon":"clock",
+        "time":"20"
+    } %}
+
+{% endif %}
+
+{% call components.inset_block(theme="enhance", class="component") %}
+
+	<h5 class='overview__title u-text-uppercase'>
+		Overview
+	</h5>
+
+	{{ components.list(data=item.data, class="u-text-color-grey-xdark") }}
+
+	{% if item.time %}
+		<p class='overview__time u-text-uppercase u-font-size-s'>
+            <span class="icon-text">
+                    {{ components.icon(icon=item.icon, size="icon--m") }}{{item.time}} minutes
+            </span>
+        </p>
+	{% endif %}
+
+{% endcall %}

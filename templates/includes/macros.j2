@@ -1,0 +1,60 @@
+
+{% macro parse_blocks(data, class) %}
+
+    {%- if data.sections -%}
+        {%- set content = data.sections -%}
+    {%- elif data.content -%}
+        {%- set content = data.content -%}
+    {%- elif sections -%}
+        {%- set content = sections.content -%}
+    {%- else -%}
+        {%- set content = data -%}
+    {%- endif -%}
+
+    {%- if content -%}
+        {%- for item in content -%}
+            {%- if item.type == "include" -%}
+                {%- include "includes/" + item.data with context -%}
+            {%- elif item.type -%}
+                {%- include "components/" + item.type + ".j2" with context -%}
+            {%- elif item.page -%}
+                {%- include "../content/" + item.page + "index.json" with context -%}
+            {%- elif item|is_list -%}
+               {{ parse_blocks(item) }}
+            {%- else -%}
+                <p {% if class %} class="{{ class }}"{% endif %} >{{ item }}</p>
+            {%- endif -%}
+        {%- endfor -%}
+    {%- endif -%}
+
+{% endmacro %}
+
+
+{% macro blocks(data) %}
+
+    {%- if data.sections -%}
+        {%- set content = data.sections -%}
+    {%- elif data.content -%}
+        {%- set content = data.content -%}
+    {%- elif sections -%}
+        {%- set content = sections.content -%}
+    {%- else -%}
+        {%- set content = data -%}
+    {%- endif -%}
+
+    {%- if content -%}
+        {%- for item in content -%}
+            {%- if item.type == "include" -%}
+                {%- include "includes/" + item.data with context -%}
+            {%- elif item.type -%}
+                {%- include "components/" + item.type + ".j2" with context -%}
+            {%- elif item.page -%}
+                {%- include "../content/" + item.page + "index.json" with context -%}
+            {%- elif item|is_list -%}
+               {{ parse_blocks(item) }}
+            {%- else -%}
+                <p>{{ item }}</p>
+            {%- endif -%}
+        {%- endfor -%}
+    {%- endif -%}
+{% endmacro %}

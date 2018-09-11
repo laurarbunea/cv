@@ -1,0 +1,127 @@
+$field-height: 50px;
+$btn-width: rem(53);
+$field-spacing--small: $spacing-s;
+$field-spacing: $spacing-s * 3;
+$suggestions-spacing: $spacing-xl - $spacing-xxxs;
+
+
+@mixin input-container {
+    position: relative;
+}
+
+@mixin left-input {
+    height: $field-height;
+    min-height: $field-height;
+    border-radius: $base-radius;
+    padding-left: $field-spacing--small;
+    padding-right: $field-spacing--small + $btn-width;
+
+    @include medium {
+        padding-left: $field-spacing;
+        padding-right: $field-spacing + $btn-width;
+    }
+}
+
+@mixin right-input-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $btn-width;
+    height: $field-height;
+    min-width: 0;
+    padding: 0;
+    border-radius: 0;
+}
+
+.search-bar {
+    @include input-container;
+    max-width: 780px;
+    background-color: $color-white;
+}
+    .search-bar--small {
+        max-width: 600px;
+    }
+
+
+.search-bar__input {
+    @include left-input;
+    font-family: $font-family;
+    font-size: rem($heading-size-h4);
+    border: 1px solid $color-brand-primary;
+    color: $color-grey-dark;
+    transition: border-color $base-transition-duration $base-transition-easing;
+}
+    .search-bar__input::-ms-clear {
+        color: $color-brand-primary;
+    }
+
+
+.search-bar__btn {
+    @include right-input-btn;
+    color: $color-brand-primary;
+    border: 0;
+    border-left: 1px solid currentcolor;
+    transition: border-color $base-transition-duration $base-transition-easing;
+
+    .icon {
+        color: $color-brand-primary;
+    }
+}
+
+.search-bar__dropdown {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: $suggestions-spacing $field-spacing--small;
+    background-color: $color-white;
+    border-bottom-left-radius: $base-radius;
+    border-bottom-right-radius: $base-radius;
+    z-index: $dropdown-z-index;
+
+    @include medium {
+        padding: $suggestions-spacing $field-spacing;
+    }
+}
+
+@mixin search-bar-input--active {
+    border-color: $color-white;
+    border-bottom-color: $color-grey-light;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: $dropdown-box-shadow;
+
+    + .search-bar__btn {
+        color: $color-grey-light;
+    }
+
+    + .search-bar__btn + .search-bar__dropdown {
+        display: block;
+        box-shadow: $dropdown-box-shadow;
+    }
+}
+
+// Remove the :focus to help debugging the active component styles.
+.search-bar__input:focus {
+    @include search-bar-input--active;
+}
+
+
+.search-suggestions + .search-suggestions {
+    margin-top: $suggestions-spacing;
+}
+
+
+.search-suggestions__title {
+    @include h5;
+    font-weight: $font-weight-medium;
+    text-transform: uppercase;
+    color: $color-grey-mid;
+    margin-bottom: $suggestions-spacing;
+}
+
+.search-suggestions__link {
+    @include heading;
+    @include h3;
+    color: currentcolor;
+}

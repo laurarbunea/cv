@@ -1,0 +1,29 @@
+.avatar {
+    display: block;
+    max-width: 140px;
+}
+    .avatar--small {
+        width: 40px;
+    }
+
+    .avatar__img {
+        border-radius: 50%;
+    }
+
+    .avatar__placeholder {
+        @include responsive-square;
+        @include font-smoothing;
+        position: relative;
+        background-color: $color-grey-xdark;
+        color: $color-white;
+        border-radius: 50%;
+
+        > img {
+            position: absolute;
+            height: 100%;
+            width: 70%;
+            top: 50%;
+            left: 15%;
+            transform: translateY(-50%);
+        }
+    }

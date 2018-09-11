@@ -1,0 +1,62 @@
+{% import "includes/macros.j2" as macros %}
+{% import "includes/components.j2" as components %}
+
+{%- if item.api -%}
+
+	{% set item = {
+        "type": "field-input",
+        "input_type": "text",
+        "placeholder": "Type something",
+        "label": "Example input field",
+        "help_text": "",
+        "error": "",
+        "maxlength": 100,
+        "suggestions": [
+            {
+                "title": "Similar questions",
+                "suggestions": [
+                    { "label": "Why did auto super batch payment fail?", "href": "/", "icon": "discussion" },
+                    { "label": "Getting an Auto Super batch payment failure code", "href": "/", "icon": "guide" },
+                    { "label": "How to set up auto super payments", "href": "/", "icon": "guide" },
+                ],
+            },
+        ],
+	} %}
+
+{%- endif -%}
+
+<label class="form-field {% if item.error %} error{% endif %}">
+    <span class="form-field__label">{{ item.label }}</span>
+
+    {% if item.help_text %}
+        <span class="form-field__help">{{ item.help_text }}</span>
+    {% endif %}
+
+    <div class="field-autocomplete">
+        <input class="field-autocomplete__input" type="{{ item.input_type }}" maxlength="{{ item.maxlength }}" placeholder="{{ item.placeholder }}"/>
+        <div class="field-autocomplete__dropdown" aria-hidden="true">
+            {% for section in item.suggestions %}
+                <div class="search-suggestions">
+                    <h5 class="search-suggestions__title">{{ section.title }}</h5>
+                    <ul class="u-list-unstyled">
+                        {% for suggestion in section.suggestions %}
+                            <li>
+                                <a href="{{ suggestion.href }}" class="search-suggestions__link">
+                                    <span class="icon-text icon-text--large@medium">
+                                        {{ components.icon(icon=suggestion.icon, size="icon--24") }}
+                                        <span>{{ suggestion.label }}</span>
+                                    </span>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+    {% if item.error %}
+        <span class="form-field__error">{{ item.error }}</span>
+    {% endif %}
+</label>

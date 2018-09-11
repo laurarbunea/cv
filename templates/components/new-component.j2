@@ -1,0 +1,17 @@
+{# include the components and the macro files #}
+{% import "includes/macros.j2" as macros %}
+{% import "includes/components.j2" as components %}
+
+{# define the api data here this is used for the pattern library aswell as default data for the pages #}
+{# the type doesn't get used in the jijna file, but this is handy to declare if you copy this data into a content page #}
+
+{% if item.api %}
+
+	{% set item = {
+		"type":"component-name",
+		"title":"I am a title"
+	} %}
+
+{% endif %}
+
+<p>{{item.title}}</p>

@@ -1,0 +1,53 @@
+{
+    "meta": {
+        "template": "guide.j2",
+        "title": "1.2.5 How to - accordion"
+    },
+    "data": [
+        {
+            "type": "overview",
+            "api":true
+        },
+        {
+            "type": "collapse",
+            "data":[
+                {
+                    "slug": "collapse-stacked-1",
+                    "step":1,
+                    "label": "Check your pricing plan",
+                    "data":[
+                        "Before your begin, make sure your pricing pla includes payroll:",
+                        {
+                            "type": "list-ordered",
+                            "api":true
+                        }
+                    ]
+                },
+                {
+                    "slug": "collapse-stacked-2",
+                    "step":2,
+                    "label": "Check your access to Xero payroll",
+                    "data":[
+                        "Content goes in here"
+                    ]
+                },
+                {
+                    "slug": "collapse-stacked-3",
+                    "step":3,
+                    "label": "Gather the required information",
+                    "data":[
+                        "Content goes in here"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "whats-next",
+            "api":true
+        },
+        {
+            "type": "feedback-buttons",
+            "api":true
+        }
+    ]
+}

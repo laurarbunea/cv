@@ -1,0 +1,57 @@
+{% import "includes/macros.j2" as macros %}
+{% import "includes/components.j2" as components %}
+
+{%- if item.api -%}
+
+	{% set item = {
+		"type": "search-bar",
+        "placeholder": "Search for a topic or ask a question",
+        "small": false,
+        "suggestions": [
+            {
+                "title": "These might help",
+                "suggestions": [
+                    { "label": "Set up your organisation with payroll", "href": "/", "icon": "guide" },
+                    { "label": "Payroll in Xero in Australia", "href": "/", "icon": "video" },
+                    { "label": "How superannuation in Xero works", "href": "/", "icon": "guide" },
+                    { "label": "Why did auto super batch payment fail?", "href": "/", "icon": "discussion" },
+                    { "label": "Getting an Auto Super batch payment failure code", "href": "/", "icon": "guide" },
+                ],
+            },
+            {
+                "title": "Topics",
+                "suggestions": [
+                    { "label": "Reconciliation & Record payments", "href": "/", "icon": "guide" },
+                    { "label": "Bank accounts & feeds", "href": "/", "icon": "discussion" },
+                ],
+            }
+        ],
+	} %}
+
+{%- endif -%}
+
+<div class="search-bar {% if item.small %}search-bar--small{% endif %}">
+    <input type="search" class="search-bar__input" placeholder="{{ item.placeholder }}"/>
+    <button class="btn search-bar__btn" type="button">
+        {{ components.icon(icon="search", title="Search", size="icon--18") }}
+    </button>
+    <div class="search-bar__dropdown" aria-hidden="true">
+        {% for section in item.suggestions %}
+            <div class="search-suggestions">
+                <h5 class="search-suggestions__title">{{ section.title }}</h5>
+                <ul class="u-list-unstyled">
+                    {% for suggestion in section.suggestions %}
+                        <li>
+                            <a href="{{ suggestion.href }}" class="search-suggestions__link">
+                                <span class="icon-text icon-text--large@medium">
+                                    {{ components.icon(icon=suggestion.icon, size="icon--24") }}
+                                    <span>{{ suggestion.label }}</span>
+                                </span>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+</div>

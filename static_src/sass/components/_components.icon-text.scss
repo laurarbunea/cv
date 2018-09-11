@@ -1,0 +1,33 @@
+@mixin icon-text {
+    > svg {
+        margin-top: -$spacing-xxxs;
+    }
+
+    > * {
+        vertical-align: middle;
+    }
+}
+
+.icon-text {
+    @include icon-text;
+
+    > svg {
+        margin-right: $spacing-xxs;
+    }
+}
+    .icon-text--large\@medium {
+        @include medium {
+            > svg {
+                margin-right: $spacing + $spacing-xxs;
+            }
+        }
+    }
+
+
+.icon-text--rev {
+    @include icon-text;
+
+    > svg {
+        margin-left: $spacing-xxs;
+    }
+}

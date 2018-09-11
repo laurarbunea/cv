@@ -1,0 +1,55 @@
+{% import "includes/macros.j2" as macros %}
+{% import "includes/components.j2" as components %}
+
+{% if item.api %}
+
+	{% set item = {
+        "type": "sidebar",
+        "heading": "Related answers",
+        "icon": "",
+	    "list": [
+	        {
+	          "url": "#",
+	          "title": "Payroll in Xero in Australia"
+	        },
+	        {
+	          "url": "#",
+	          "title": "How superannuation in Xero Works"
+	        },
+	        {
+	          "url": "#",
+	          "title": "Why did auto super batch payment fail?"
+	        },
+	        {
+	          "url": "#",
+	          "title": "How do I change employess exitsing super fund"
+	        }
+        ],
+        "data": [],
+	} %}
+
+{% endif %}
+
+<div class="sidebar{% if item.class %} {{ item.class }}{% endif %}">
+
+    {% if item.icon %}
+        {{ components.icon(icon=item.icon, size="icon--xxxl") }}
+    {% endif %}
+
+	<h5 class="sidebar__heading u-text-uppercase u-text-color-muted">
+		{{ item.heading }}
+    </h5>
+
+    {% if item.list %}
+        <ul class="sidebar__list">
+            {% for anchor in item.list %}
+                <li><a href="{{anchor.url}}">{{ anchor.title }}</a></li>
+            {% endfor %}
+        </ul>
+    {% elif children %}
+        {{ children }}
+    {% else %}
+        {{ macros.parse_blocks(item.data) }}
+    {% endif %}
+
+</div>

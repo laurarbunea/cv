@@ -1,0 +1,9 @@
+{% import "includes/macros.j2" as macros %}
+
+<div class="inset-block {{item.class}}{% if item.theme %} t-{{item.theme}} t-{{item.theme}}--bg{% endif %}">
+	{% if children %}
+		{{ children }}
+	{% else %}
+		{{ macros.parse_blocks( item.data ) }}
+	{% endif %}
+</div>

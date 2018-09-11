@@ -1,0 +1,42 @@
+
+{% import "includes/macros.j2" as macros %}
+{% import "includes/components.j2" as components %}
+
+
+{% if item.api %}
+
+    {% set item = {
+        "type":"search-result-featured",
+        "heading":"Payroll in Xero in Australia",
+        "text":true,
+    } %}
+
+{% endif %}
+
+{% call components.inset_block(theme="enhance", class='component component--bleed t-featured' ) %}
+
+    {{ components.heading_breadcrumb_text_set(api=true) }}
+
+    {% if item.list %}
+        {{ components.list(api=true) }}
+    {% endif %}
+
+    {% if item.video %}
+
+        <div class="[ grid grid--row-spacing ]">
+
+            <div class="[ width-1/3 ]">
+
+                {{ components.video(api=true) }}
+
+            </div>
+
+        </div>
+
+    {% endif %}
+
+     {% if item.text %}
+        <p>Hi there, I have written up some instructions on how to create a Shareholder Current Account reposit in a repsort pack using a balance sheet template. If you are interested I can send you a PDF of the instructions. Just reply with your details and I will e-mail them through...</p>
+    {% endif %}
+
+{% endcall %}

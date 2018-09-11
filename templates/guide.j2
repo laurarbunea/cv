@@ -1,0 +1,43 @@
+{% extends "template.j2" %}
+{% import "includes/macros.j2" as macros %}
+{% import "includes/components.j2" as components %}
+
+{% block content %}
+
+	<div class='[ wrapper ]'>
+
+		<div class='[ section gutters ]'>
+
+			{% if meta.page_title is mapping  %}
+		        {{ components.title(**meta.page_title) }}
+		    {% else %}
+
+				{% set item = [ { "component":"breadcrumb" }] %}
+
+				{{components.title( data=item, heading="Guide - "+meta.title, button=true)}}
+
+		    {% endif %}
+
+			<div class='[ grid grid--col-spacing grid--col-spacing-large@large ]'>
+
+				<div class='[ width-full width-3/4@medium ]'>
+
+					{{ macros.parse_blocks( data ) }}
+
+				</div>
+
+				<div class='[ width-full width-1/4@medium ]'>
+
+					{{ components.sidebar(api=true) }}
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+    {{ components.question_block(api=true) }}
+
+{% endblock %}

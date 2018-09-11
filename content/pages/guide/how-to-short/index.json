@@ -1,0 +1,25 @@
+{
+    "meta": {
+        "template": "guide.j2",
+        "title": "1.2.7 How to - short"
+    },
+    "data": [
+        {
+            "type": "overview",
+            "api":true
+        },
+        {
+            "type": "rich-text",
+            "data":[
+                {
+                    "type": "list-ordered",
+                    "api":true
+                }
+            ]
+        },
+        {
+            "type": "feedback-buttons",
+            "api":true
+        }
+    ]
+}

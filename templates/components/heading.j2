@@ -1,0 +1,13 @@
+
+{% if item.api %}
+
+	{% set item = {
+        "type": "heading",
+        "level": "h1",
+        "data": "Heading",
+        "class": "",
+    } %}
+
+{% endif %}
+
+<{{ item.level }}{% if item.class %} class="{{ item.class }}"{% endif %}>{{ item.data }}</{{ item.level }}>

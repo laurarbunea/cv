@@ -1,0 +1,21 @@
+{
+    "meta": {
+        "template": "search.j2",
+        "title": "5.0.1 Search"
+    },
+    "data": [
+        {
+            "type":"heading",
+            "level":"h2",
+            "data":"Results for \"discussion example\""
+        },
+        {
+            "type":"search-result-featured",
+            "api":true
+        },
+        {
+            "type":"search-results",
+            "api":true
+        }
+    ]
+}

@@ -1,0 +1,72 @@
+$themes: (
+    'content': (
+        theme-color: $color-white,
+        text-color: $color-page-text
+    ),
+    'highlight': (
+        theme-color: $color-highlight,
+        text-color: $color-page-text
+    ),
+    'enhance': (
+        theme-color: $color-enhance,
+        text-color: $color-page-text
+    ),
+    'inverse': (
+        theme-color: $color-footer,
+        text-color: $color-page-text
+    )
+);
+
+@each $alias, $colors in $themes {
+    $theme-color: map-get($colors, theme-color);
+    $text-color: map-get($colors, text-color);
+
+    .t-#{$alias} {
+
+        .u-current-color {
+            color: $theme-color;
+        }
+
+        .u-current-color\:hover {
+            @include hover {
+                color: $theme-color;
+            }
+        }
+
+        // Only use the --bg modifier when you want to apply background
+        // color to the container you have set the theme class on.
+        // eg. <div class-"t-green t-green--bg"></div>
+        &.t-#{$alias}--bg,
+        .u-current-bg-color {
+            background-color: $theme-color;
+            color: $text-color;
+        }
+
+        .u-current-text-color {
+            color: $text-color;
+        }
+    }
+
+    .u-color-#{$alias} {
+        color: $theme-color;
+    }
+
+    .u-color-#{$alias}\:hover {
+        @include hover {
+            color: $theme-color;
+        }
+    }
+
+    .u-bg-color-#{$alias} {
+        background-color: $theme-color;
+    }
+
+    .u-text-color-#{$alias} {
+        color: $text-color;
+    }
+}
+
+.t-featured {
+    border: 1px solid $color-grey-xlight;
+    border-left: 2px solid $color-brand-primary;
+}

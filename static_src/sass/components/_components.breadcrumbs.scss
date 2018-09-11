@@ -1,0 +1,41 @@
+// ============================================================================
+// Breadcrumbs
+// ============================================================================
+
+.breadcrumb {
+    @include list-inline;
+
+    > li {
+        margin-top: 0;
+        padding-bottom: $spacing-xs;
+        margin-bottom: 0;
+
+        a {
+            background-image: none !important;
+            @include font-smoothing (false);
+        }
+
+        & + li {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            display: inline-block;
+
+            svg {
+                display: none;
+            }
+        }
+
+          @include medium {
+            display: inline-block;
+        }
+
+        & a::after, & .back::before {
+            padding-left: $spacing-xxs;
+            padding-right: $spacing-xxs;
+            color: $color-grey-mid;
+        }
+
+    }
+}

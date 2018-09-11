@@ -1,0 +1,24 @@
+.sidebar {
+    padding-top: $spacing-l;
+}
+
+    .sidebar__heading {
+        @include keyline(top);
+        padding-top: $spacing-l;
+        @include font-smoothing-off;
+    }
+        .sidebar--no-keyline .sidebar__heading {
+            padding-top: 0;
+            border-top: 0;
+        }
+
+
+    .sidebar__list {
+        @include list-unstyled;
+        font-family: $font-family;
+        line-height: 1.25;
+    }
+
+.sidebar .profile-popover {
+    margin-bottom: $spacing;
+}

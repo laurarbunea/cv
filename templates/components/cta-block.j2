@@ -1,0 +1,38 @@
+{% import "includes/macros.j2" as macros %}
+{% import "includes/components.j2" as components %}
+
+{% if item.api %}
+
+	{% set item = {
+		"type":"cta-block",
+		"heading":"Use the CTA block for full-width call to actions",
+        "description":"This is useful for the login button, and discussions' \"Mark as answered\"",
+        "cta": "Call to action",
+        "cta_theme": "primary",
+	} %}
+
+{% endif %}
+
+{% call components.container() %}
+
+    <div class="[ grid grid--center grid--row-spacing ]">
+
+        <div class="[ width-full ]">
+
+            <h2>
+                {{item.heading}}
+            </h2>
+
+            <p>
+                {{item.description}}
+            </p>
+
+        </div>
+
+        <div class="[ width-full ]">
+            {{ components.btn(href="#", text=item.cta, theme=item.cta_theme) }}
+        </div>
+
+    </div>
+
+{% endcall %}

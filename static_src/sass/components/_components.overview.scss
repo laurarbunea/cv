@@ -1,0 +1,9 @@
+.overview__title {
+    @include font-smoothing-off;
+    color: $color-grey-dark;
+}
+
+.overview__time {
+    color: $color-grey-dark;
+    font-family: $font-family;
+}

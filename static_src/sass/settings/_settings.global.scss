@@ -1,0 +1,72 @@
+// ============================================================================
+// Global settings
+// ============================================================================
+
+// Fonts
+// ----------------------------------------------------------------------------
+
+$font-family: 'Martel', sans-serif;
+$font-family-secondary: 'Martel', sans-serif;
+
+$base-font-size:        17px;
+$base-line-height:      24px;
+
+$line-height-headline:  1.2;
+
+$font-weight-light:     300;
+$font-weight-book:      300;
+$font-weight-regular:   400;
+$font-weight-medium:    500;
+$font-weight-bold:      700;
+
+
+// Heading sizes
+// ----------------------------------------------------------------------------
+$heading-size-h1:  		44;
+$heading-size-h2: 		36;
+$heading-size-h3:  		25;
+$heading-size-h4:  		17;
+$heading-size-h5:  		17;
+$heading-size-h6:  		17;
+
+// Breakpoints
+// ----------------------------------------------------------------------------
+
+$breakpoint-xsmall: 	480px;
+$breakpoint-small: 		768px;
+$breakpoint-medium: 	$breakpoint-small + 1px;
+$breakpoint-large: 		1200px;
+
+// Icon sizes
+// ----------------------------------------------------------------------------
+
+$size-icon: 			1rem;
+$size-icon-small: 		.875rem;
+$size-icon-xsmall: 		.75rem;
+
+// Animations/Transitions
+// ----------------------------------------------------------------------------
+
+$base-transition-duration: .1s;
+$base-transition-easing: ease-in;
+$base-transition:   	all $base-transition-duration $base-transition-easing;
+
+$ease-primary: 			cubic-bezier(.51, .11, .59, .92);
+$ease-out-primary: 		cubic-bezier(.2, .42, .59, .92);
+$ease-in-primary: 		cubic-bezier(.55, .12, 1, 1);
+
+$ease:              	cubic-bezier(.43, .11, .41, 1);
+$easing-circ:       	cubic-bezier(.075, .82, .165, 0);
+
+
+
+// Other
+// ----------------------------------------------------------------------------
+
+$base-radius: 			3px;
+$base-radius--small:    2px;
+
+$dropdown-box-shadow:   0 5px 12px 0 rgba(0, 0, 0, .3);
+$popover-box-shadow:    0 2px 4px 0 rgba(0,0,0,0.10);
+$dropdown-z-index:      2;
+$popover-z-index:       1;

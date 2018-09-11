@@ -1,0 +1,74 @@
+{% import "includes/macros.j2" as macros %}
+{% import "includes/components.j2" as components %}
+
+
+{% if item.api %}
+    {% macro test_children() %}
+        {{ components.p(api=true)}}
+        {{ components.list(api=true)}}
+    {% endmacro %}
+
+    {% set children = test_children() %}
+
+    {% set item =
+        {
+            "type": "collapse",
+            "data":[
+                {
+                    "slug": "collapse-stacked-1",
+                    "step":false,
+                    "label": "#1 stacked collapse",
+                    "content":true
+                },
+                {
+                    "slug": "collapse-stacked-2",
+                    "step":false,
+                    "label": "#2 stacked collapse",
+                    "content":true
+                }
+            ]
+        }
+     %}
+
+{% endif %}
+
+
+
+<div class="component">
+
+{% for collapsible in item.data %}
+
+    <div data-collapse class="collapse{% if collapsible.step %} collapse--numbered{% endif %} " id="{{ collapsible.slug }}">
+        <a data-collapse-trigger class="collapse__trigger {{ collapsible.class }}" id="label-{{ collapsible.slug }}" href="#{{ collapsible.slug }}">
+            <h4 class="u-position-relative">
+                {% if collapsible.step %}
+                    <span class="collapse__step">
+                        {{ collapsible.step }}
+                    </span>
+                {% endif %}
+                <span class="collapse__label">
+                    {{ collapsible.label }}
+
+                    <span class="collapse__arrow" role="presentation"></span>
+                </span>
+            </h4>
+        </a>
+
+        <div data-collapse-content aria-labelledby="label-{{ collapsible.slug }}" id="control-{{ collapsible.slug }}" class="collapse__content">
+            <div class='rich-text'>
+                {% if children %}
+                    {{ children }}
+                {% else %}
+                    {{ macros.parse_blocks( collapsible.data ) }}
+                {% endif %}
+            </div>
+        </div>
+
+        {% if collapsible.step %}
+            <div class="collapse__keyline" aria-hidden="true" role="presentation"></div>
+        {% endif %}
+    </div>
+
+{% endfor %}
+
+</div>

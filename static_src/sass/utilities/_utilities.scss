@@ -1,0 +1,11 @@
+.u-img--responsive {
+    max-width: 100%;
+}
+
+.u-list-inline {
+    @include list-inline;
+}
+
+.u-list-unstyled {
+    @include list-unstyled;
+}

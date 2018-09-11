@@ -1,0 +1,82 @@
+// ============================================================================
+// Grid
+// ============================================================================
+
+.grid {
+    @include clearfix;
+    margin:  0;
+    padding: 0;
+    list-style: none;
+    font-size: 0;
+}
+
+    .grid > * {
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        font-size: medium; // Font-size medium reset the block to the context of body (ie, 16px)
+        text-justify: auto;
+    }
+
+
+
+// ============================================================================
+// Grid spacing
+// ============================================================================
+
+.grid--row-spacing {
+
+    //todo don't think we need this
+    //margin-bottom: $grid-spacing;
+
+    > * {
+        margin-bottom: $grid-spacing;
+    }
+}
+
+.grid--col-spacing {
+    margin-left: -$grid-spacing;
+
+    > * {
+        padding-left: $grid-spacing;
+    }
+}
+
+.grid--col-spacing-large\@large {
+    @include large {
+        margin-left: -$grid-spacing * 3.125;
+
+        > * {
+            padding-left: $grid-spacing * 3.125;
+        }
+    }
+}
+
+// ============================================================================
+// grid allignment
+// ============================================================================
+
+
+.grid--center > * {
+    text-align: center;
+}
+
+.grid--middle > * {
+    vertical-align: middle;
+}
+
+.grid--bottom > * {
+    vertical-align: bottom;
+}
+
+//flips content blocks on small
+.grid--flip\@small {
+
+    @include small {
+        direction: rtl;
+
+        & > * {
+            direction: ltr;
+        }
+    }
+}

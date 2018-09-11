@@ -1,0 +1,10 @@
+.feedback-buttons__button {
+    padding-left: $spacing-s;
+    padding-right: $spacing-s;
+    min-width: 0;
+    border: 1px solid $color-grey-light;
+
+    &:hover {
+        background-color: darken($color-white, 10%);
+    }
+}

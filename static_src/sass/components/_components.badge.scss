@@ -1,0 +1,52 @@
+// ============================================================================
+// Badge
+// ============================================================================
+$badge-spacing: $spacing-s;
+$badge-default-color: $color-grey-dark;
+
+.badge {
+    @include font-smoothing-off;
+    @include truncate;
+
+    display: inline-block;
+    margin: 0;
+    padding: 0 $badge-spacing;
+
+    vertical-align: middle;
+    text-align: center;
+    font-family: $font-family;
+    line-height: 20px;
+    letter-spacing: .2px;
+    text-transform: uppercase;
+    color: $badge-default-color;
+
+    border: 1px solid transparent;
+    font-size: rem(12);
+    border-radius: $base-radius;
+}
+
+.badge--plain {
+    text-transform: none;
+}
+
+.badge--green {
+    color: $color-brand-tertiary;
+    border-color: currentcolor;
+}
+
+.badge--orange {
+    color: $color-brand-primary;
+    border-color: currentcolor;
+}
+
+//clean this should be its own component
+.badge--orange-circle {
+    width: 1.5em;
+    height: 1.5em;
+    padding: 0;
+    border-radius: 50%;
+    background-color: $color-brand-primary;
+    color: $color-white;
+    font-size: rem(14);
+    line-height: 1.2em;
+}

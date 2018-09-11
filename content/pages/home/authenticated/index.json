@@ -1,0 +1,137 @@
+{
+    "meta": {
+        "template": "one-col.j2",
+        "title": "0.1 Home - authenticated",
+        "header_title": "Hi Jamie. How can we help?",
+        "question_block": false
+    },
+    "data": [
+        {
+            "type": "container",
+            "data": [
+                {
+                    "type": "tabs",
+                    "theme": "secondary",
+                    "large": true,
+                    "tabs": [
+                        {
+                            "title": "Latest",
+                            "icon": "tab-latest",
+                            "content": [
+                                {
+                                    "type": "discussion-block-categorised",
+                                    "api": true
+                                }
+                            ]
+                        },
+                        {
+                            "title": "My cases",
+                            "icon": "tab-cases",
+                            "content": [
+                                {
+                                    "type": "csp-cases",
+                                    "api": true
+                                },
+                                {
+                                    "type": "inset-block",
+                                    "data": [
+                                        {
+                                            "type": "pagination",
+                                            "pages": 2,
+                                            "current_page": 1,
+                                            "class": "u-text-center"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Discussions",
+                            "icon": "tab-discussions",
+                            "content": [
+                                {
+                                    "type": "csp-discussions",
+                                    "api": true
+                                },
+                                {
+                                    "type": "inset-block",
+                                    "data": [
+                                        {
+                                            "type": "pagination",
+                                            "pages": 2,
+                                            "current_page": 1,
+                                            "class": "u-text-center"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Bookmarked",
+                            "icon": "tab-bookmarked",
+                            "content": [
+                                {
+                                    "type": "csp-discussions",
+                                    "api": true
+                                },
+                                {
+                                    "type": "inset-block",
+                                    "data": [
+                                        {
+                                            "type": "pagination",
+                                            "pages": 2,
+                                            "current_page": 1,
+                                            "class": "u-text-center"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "topic-block",
+            "heading": "Useful topics for you",
+            "theme": "enhance",
+            "topics": [
+                {
+                    "title": "Pay and manage employees",
+                    "description":
+                        "Set up customise payroll in Xero. Organise payment, payslips, superannuation, leave, holidays and"
+                },
+                {
+                    "title": "Bank feeds",
+                    "description":
+                        "Set up customise payroll in Xero. Organise payment, payslips, superannuation, leave, holidays and"
+                },
+                {
+                    "title": "Pay and manage employees",
+                    "description":
+                        "Set up customise payroll in Xero. Organise payment, payslips, superannuation, leave, holidays and"
+                },
+                {
+                    "title": "Pay and manage employees",
+                    "description":
+                        "Set up customise payroll in Xero. Organise payment, payslips, superannuation, leave, holidays and"
+                },
+                {
+                    "title": "Bank feeds",
+                    "description":
+                        "Set up customise payroll in Xero. Organise payment, payslips, superannuation, leave, holidays and"
+                },
+                {
+                    "title": "Pay and manage employees",
+                    "description":
+                        "Set up customise payroll in Xero. Organise payment, payslips, superannuation, leave, holidays and"
+                }
+            ],
+            "load_more": true
+        },
+        {
+            "type": "discussion-block",
+            "api": true
+        }
+    ]
+}

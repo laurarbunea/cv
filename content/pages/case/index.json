@@ -1,0 +1,54 @@
+{
+    "meta": {
+        "template": "case.j2",
+        "title": "3.2 Individual case",
+        "case_resolved_block": true,
+        "page_title": {
+            "heading": "Set up your organisation with payroll",
+            "data": [
+                {
+                    "component": "badge",
+                    "text": "Action required",
+                    "theme": "orange"
+                },
+                {
+                    "component": "info",
+                    "text": "CX000123453"
+                },
+                {
+                    "component": "pipe"
+                },
+                {
+                    "component":"info",
+                    "text": "VR Enterprise"
+                }
+            ]
+        }
+    },
+    "data": [
+        {
+            "type": "rich-text",
+            "data": [
+                "Hi,",
+                "I submitted my first auto super payment last week and today I saw that it's listed as failed in Payroll. When I click the link all it says is:",
+                "Processing Failure",
+                "ECV-IV-22107",
+                "My working theory based on what I can discern from the web/video notes - is that Superannuation funds need USIs, instead of SPINs. Is this right?",
+                "I haven't received any other notifications from Xero - can anyone provide advice on failure codes for Auto Super payments?"
+            ]
+        },
+        {
+            "type": "section",
+            "class": "u-text-color-grey-dark",
+            "no_top": true,
+            "data": [
+                {
+                    "type": "icon",
+                    "class": "u-align-right",
+                    "icon": "overflow"
+                },
+                "13 September 2017"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+// ============================================================================
+// Table
+// ============================================================================
+
+.table-scrollable-container {
+    min-width: $breakpoint-medium;
+}
+
+.table--scrollable {
+    table-layout: fixed;
+
+    tr {
+        width: 100%;
+        display: table;
+    }
+
+    thead, tbody {
+        display: block;
+    }
+}

@@ -1,0 +1,83 @@
+$popover-background-color: $color-white;
+$popover-border-color: $color-grey-light;
+$popover-border-width: 1px;
+$popover-arrow-height: 8px;
+
+@mixin popover-active {
+    display: inline-block;
+}
+
+.popover {
+    display: none;
+    position: absolute;
+    margin-top: 5px;
+    border: $popover-border-width solid $popover-border-color;
+    border-radius: $base-radius--small;
+    box-shadow: $popover-box-shadow;
+    background-color: $popover-background-color;
+    z-index: $popover-z-index;
+}
+
+
+    // Remove `:hover specificers` to facilitate development.
+    .popover:hover,
+    *:hover + .popover,
+    .popover--open {
+        @include popover-active;
+    }
+
+
+.popover__arrow {
+    display: block;
+    position: absolute;
+    border: $popover-arrow-height solid transparent;
+    bottom: 100%;
+    margin-left: -$popover-arrow-height;
+}
+
+    .popover__arrow:first-of-type {
+        border-bottom-color: $popover-border-color;
+    }
+
+    .popover__arrow:last-of-type {
+        border-bottom-color: $popover-background-color;
+        margin-bottom: -$popover-border-width;
+    }
+
+
+.popover__content {
+    padding: $spacing-xl $spacing-l $spacing-l;
+    min-width: 320px;
+}
+
+.popover__menu {
+    @include list-unstyled;
+    @include h6;
+    min-width: 180px;
+    font-family: $font-family;
+    text-align: left;
+}
+
+.popover__menu-item {
+    margin-bottom: 0;
+}
+    .popover__menu-item:nth-of-type(n + 2) {
+        border-top: $popover-border-width solid $popover-border-color;
+    }
+
+
+.popover__menu-link {
+    display: block;
+    position: relative;
+    padding: $spacing;
+    line-height: 20px;
+    color: $color-grey-dark;
+
+    .badge {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(-50%, -50%);
+        font-size: rem(16);
+    }
+}

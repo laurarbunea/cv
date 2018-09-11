@@ -1,0 +1,219 @@
+// ------------------------------------
+//    #MIXINS
+// ------------------------------------
+
+// Global mixins available to the entire project. Define file-specific
+// mixins inside the file to which they relate.
+
+
+// Mixin to drop micro clearfix into a selector.
+//
+// .simple-usage {
+//   @include clearfix;
+// }
+//
+// .detailed-usage {
+//   @include clearfix(important);
+// }
+
+@mixin responsive-square {
+    height: 0;
+    padding-bottom: 100%;
+}
+
+@mixin clearfix {
+    &::after {
+        display: table;
+        content: '';
+        clear: both;
+    }
+}
+
+
+@mixin hover {
+    .no-touch &:hover {
+        @content;
+    }
+}
+
+@mixin inline-block($va: top) {
+    display: inline-block;
+    vertical-align: $va;
+}
+// Generate `:hover` and `:focus` styles in one go.
+@mixin hocus {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+// enable/disable font smoothing
+@mixin font-smoothing($toggle: true) {
+    @if ($toggle == true) {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    } @else {
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: auto;
+    }
+}
+
+@mixin font-smoothing-off {
+    @include font-smoothing(false);
+}
+
+// add arrow to block element
+@mixin arrow($orientation: 'up', $color: $color-black, $size: 1em) {
+
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: '';
+        border-color: $color;
+
+        width: 0;
+        height: 0;
+        z-index: 7;
+
+        @if ($orientation == 'up') {
+
+            top: auto;
+            bottom: 100%;
+            left: 1.5 * $size;
+
+            border-top: 0;
+            border-left: $size solid transparent;
+            border-right: $size solid transparent;
+
+            border-bottom-width: $size;
+            border-bottom-style: solid;
+
+        } @else if ($orientation == 'down') {
+
+            border-bottom: 0;
+            border-left: $size solid transparent;
+            border-right: $size solid transparent;
+            bottom: auto;
+            top: 100%;
+            border-top-width: $size;
+            border-top-style: solid;
+            left: 49%;
+
+        } @else if ($orientation == 'right') {
+
+            left: 100%;
+            top: 1.5 * $size;
+
+            border-right: 0;
+            border-top: $size solid transparent;
+            border-bottom: $size solid transparent;
+
+            border-left-width: $size;
+            border-left-style: solid;
+
+        } @else if ($orientation == 'left') {
+
+            right: 100%;
+            top: 1.5 * $size;
+
+            border-left: 0;
+            border-top: $size solid transparent;
+            border-bottom: $size solid transparent;
+
+            border-right-width: $size;
+            border-right-style: solid;
+
+        }
+
+    }
+
+}
+
+// ratio
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        display: block;
+        content: '';
+        width: 100%;
+        // See functions
+        padding-top: ratio($width, $height);
+    }
+
+    > .ratio__content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .ratio__image {
+        display: block;
+        position: absolute;
+        min-height: 101%;
+        min-width: 100%;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        object-fit: cover;
+    }
+}
+
+
+@mixin tick-icon ($fill-color: #77ba22) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: svg-uri('<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="-623 385 32 32"><path fill="#{$fill-color}" d="M-609.6 411.8s-3-3.8-9.8-10.5l2.2-2.2 6 5.3c11.3-11.3 15-13.5 15-13.5s.8 0 1.5 1.5c-6.7 5.9-14.9 19.4-14.9 19.4z"/></svg>');
+    vertical-align: middle;
+}
+
+//utilities
+@mixin list-block {
+    list-style: none;
+    padding-left: 0;
+
+    & > li {
+        display: block;
+    }
+}
+
+$ie11-list-style-no-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');
+
+@mixin list-unstyled {
+
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+
+    .ie11 & {
+        list-style-image: $ie11-list-style-no-image;
+    }
+}
+
+@mixin list-inline {
+    margin-left: 0;
+    padding: 0;
+    list-style: none;
+
+    .ie11 & {
+        list-style-image: $ie11-list-style-no-image;
+    }
+
+    > li {
+        display: inline-block;
+
+        & + li {
+            margin-left: $spacing-s;
+        }
+    }
+}
+
+@mixin keyline($position: bottom, $color: $color-keyline, $size: 1px) {
+    border-#{$position}: solid #{$size} #{$color};
+}

@@ -1,0 +1,65 @@
+// ============================================================================
+// Site colors
+// ============================================================================
+
+
+//  Brand
+// -----------------------------------------------------------------------------
+$color-brand-primary:               	#ec6c00;
+$color-brand-primary-highlight:     	lighten($color-brand-primary, 5%);
+$color-brand-primary-shadow:        	darken($color-brand-primary,  5%);
+
+$color-brand-secondary:               	#13b5ea;
+
+$color-brand-tertiary:               	#7ed321;
+
+// Common
+// -----------------------------------------------------------------------------
+$color-black:                       	#000;
+$color-white:                       	#fff;
+$color-white-off:                       #f7f7f7;
+
+$color-grey-xdark: 						#45474d;
+$color-grey-dark: 						#7b8188;
+$color-grey-mid: 						#a8a9ac;
+$color-grey-light:                      #f0f0f0;
+$color-grey-xlight:                     #eeeeef;
+
+$color-blue-dark:                       #32465a;
+$color-blue-light:                      #e6f7fc;
+
+$color-orange-light:                    #fdf2e8;
+
+//theming backgrounds
+$color-highlight:                       $color-blue-light;
+$color-enhance:                      	$color-white-off;
+$color-footer: 							$color-grey-xdark;
+
+// Page
+// -----------------------------------------------------------------------------
+$color-page-text:                   	$color-grey-xdark;
+$color-page-links:                  	$color-brand-secondary;
+$color-page-background:             	$color-white;
+
+$color-keyline:			 				$color-grey-xlight;
+$color-muted: 							$color-grey-dark;
+
+// Accesibility
+// -----------------------------------------------------------------------------
+$color-focus:                      		#6cc6ee;
+$color-select:                     		#e5e5e5;
+
+
+// Buttons
+// -----------------------------------------------------------------------------
+$color-btn:                             $color-page-text;
+$color-btn-border:                      $color-page-text;
+$color-btn-background:                  $color-white;
+$color-btn-hover:                       $color-white;
+$color-btn-background-hover:            $color-page-text;
+
+
+// Footer
+// -----------------------------------------------------------------------------
+$color-bg-footer: #2f331f;
+$color-text-footer: #a6a6a1;

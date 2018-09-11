@@ -1,0 +1,16 @@
+{% import "includes/macros.j2" as macros %}
+{% import "includes/components.j2" as components %}
+
+<form class='component'>
+
+{% if item.data %}
+
+    {{  macros.parse_blocks( item.data ) }}
+
+{% else %}
+
+    {{ children }}
+
+{% endif %}
+
+</form>

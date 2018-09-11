@@ -1,0 +1,14 @@
+// ============================================================================
+// Gutters
+// ============================================================================
+
+
+.gutters {
+    padding-right: $gutter-spacing / 4;
+    padding-left: $gutter-spacing / 4;
+
+    @include medium {
+        padding-right: $gutter-spacing;
+        padding-left: $gutter-spacing;
+    }
+}

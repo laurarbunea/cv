@@ -1,0 +1,19 @@
+{% import "includes/macros.j2" as macros %}
+<!--add a class for visual not image so it breask to one col on small -->
+<div class="media component{% if item.reversed %} media--rev{% endif %}{% if item.responsive %} media--hide@small{% endif %}{% if item.small %} media--small{% endif %}">
+
+    <div class="media__image {% if item.responsive %} media--hide@small {% endif %}" role="presentation">
+
+         {{ macros.parse_blocks( item.visual ) }}
+
+    </div>
+
+    <div class="media__body">
+        {% if children %}
+            {{ children }}
+        {% else %}
+            {{ macros.parse_blocks( item.body ) }}
+        {% endif %}
+    </div>
+
+</div>

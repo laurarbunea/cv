@@ -1,0 +1,39 @@
+//
+// Inputs
+//
+
+[type='text'],
+[type='password'],
+[type='email'],
+[type='number'],
+[type='tel'],
+[type='url'],
+[type='date'],
+[type='search'],
+select,
+textarea {
+    @include font-smoothing;
+
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $font-family-secondary;
+    font-size: 1rem;
+    outline: none;
+    border: 1px solid currentcolor;
+    caret-color: $color-brand-primary;
+}
+
+[type='hidden'] {
+    line-height: 1.25;
+}
+
+::-ms-clear {
+    height: rem(24);
+}
+
+::placeholder {
+    color: $color-grey-mid;
+}

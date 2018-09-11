@@ -1,0 +1,32 @@
+{% if item.api %}
+
+	{% set item = {
+        "type": "list-ordered",
+         "data": [
+            "Ordered list item one",
+            "Ordered list item two"
+        ],
+        "container":false
+    } %}
+
+{% endif %}
+
+{% if item.container %}
+    <div class="rich-text">
+{% endif %}
+
+    <ol>
+
+        {% for item in item.data %}
+
+            <li>
+                {{ item }}
+            </li>
+
+        {% endfor %}
+
+    </ol>
+
+{% if item.container %}
+    </div>
+{% endif %}

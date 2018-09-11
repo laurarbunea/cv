@@ -1,0 +1,53 @@
+.u-font-light {
+    font-weight: $font-weight-light;
+}
+
+.u-font-book {
+    font-weight: $font-weight-book;
+}
+
+.u-font-regular {
+    font-weight: $font-weight-regular;
+}
+
+.u-font-medium {
+    font-weight: $font-weight-medium;
+    @include font-smoothing (false);
+}
+
+.u-font-bold {
+    font-weight: $font-weight-bold;
+    @include font-smoothing (false);
+}
+
+.u-font-primary { font-family: $font-family;}
+.u-font-secondary { font-family: $font-family-secondary;}
+
+.u-font-intro {
+    font-size: rem(20);
+    margin-bottom: $spacing-xl;
+    @include medium {
+    	font-size: rem(24);
+    }
+}
+
+.u-font-big {
+    font-size: rem(44);
+}
+
+.u-font-large {
+	font-size: rem(25);
+
+	@include medium {
+		font-size: rem(36);
+	}
+}
+
+.u-font-size\-\- { font-size: rem(17); }
+
+.u-font-size\-\-\- { font-size: rem(15); }
+
+
+.u-font-size-s {
+    font-size: rem(14);
+}

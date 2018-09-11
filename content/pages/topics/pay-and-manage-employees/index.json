@@ -1,0 +1,51 @@
+{
+    "meta": {
+        "template": "one-col-with-container.j2",
+        "title": "1.1 Topic landing - videos",
+        "video_block":true
+    },
+    "data": [
+        {
+            "type": "rich-text",
+            "data":[
+                {
+                    "type":"heading",
+                    "level":"h2",
+                    "data":"Pay and manage employees"
+                },
+                "Set up and customise payroll in Xero. Organise payments, payslips, superannuation, leave, holidays and expense claims."
+            ]
+        },
+        {
+            "type":"tabs",
+            "tabs":[
+                {
+                    "title":"Business Guides",
+                    "content":[
+                        {
+                            "type": "sub-topic",
+                            "api":true
+                        },
+                        {
+                            "type": "sub-topic",
+                            "api":true
+                        },
+                        {
+                            "type": "sub-topic",
+                            "api":true
+                        }
+                    ]
+                },
+                {
+                    "title":"Discussions",
+                    "content":[
+                        {
+                            "type": "csp-discussions",
+                            "api": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

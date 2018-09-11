@@ -1,0 +1,22 @@
+{
+    "meta": {
+        "template": "guide.j2",
+        "title": "1.2.10 video"
+    },
+    "data": [
+        {
+            "type": "rich-text",
+            "data":[
+                {
+                    "type": "video",
+                    "api":true
+                },
+                "Keeping a close eye on your cash flow is everything in small business. But sometimes it feels as though you need eight arms to manage your workload. Thankfuly, Xero direct bank feeds make things better... much better."
+            ]
+        },
+        {
+            "type": "feedback-buttons",
+            "api":true
+        }
+    ]
+}

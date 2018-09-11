@@ -1,0 +1,17 @@
+{
+    "meta": {
+        "template": "search.j2",
+        "title": "5.0.4 No snippets"
+    },
+    "data": [
+        {
+            "type":"heading",
+            "level":"h2",
+            "data":"Results for \"no snippet example\" "
+        },
+        {
+            "type":"search-results",
+            "api":true
+        }
+    ]
+}

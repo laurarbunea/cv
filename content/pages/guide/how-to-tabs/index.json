@@ -1,0 +1,82 @@
+{
+    "meta": {
+        "template": "guide.j2",
+        "title": "1.2.1 Guide - How to tabs"
+    },
+    "data": [
+        {
+            "type": "overview",
+            "api":true
+        },
+        {
+            "type": "collapse",
+            "data":[
+                {
+                    "slug": "collapse-stacked-1",
+                    "label": "Create an invoice",
+                    "data":[
+                        {
+                            "type":"tabs",
+                            "theme": "primary",
+                            "tabs":[
+                                {
+                                    "title":"Web",
+                                    "content":[
+                                        "Content goes here for Web",
+                                        {
+                                            "type":"list-ordered",
+                                            "api": true
+                                        },
+                                        {
+                                            "type":"heading",
+                                            "level": "h3",
+                                            "data":"Creating your first invoice"
+                                        },
+                                        {
+                                            "type":"video",
+                                            "api":true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title":"Android",
+                                    "content":[
+                                        "Content goes here for Android"
+                                    ]
+                                },
+                                {
+                                    "title":"iOS",
+                                    "content":[
+                                        "Content goes iOS"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "slug": "collapse-stacked-2",
+                    "label": "Send an invoice",
+                    "data":[
+                        "Content goes in here"
+                    ]
+                },
+                {
+                    "slug": "collapse-stacked-3",
+                    "label": "Print and Send an invoice",
+                    "data":[
+                        "Content goes in here"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "whats-next",
+            "api":true
+        },
+        {
+            "type": "feedback-buttons",
+            "api":true
+        }
+    ]
+}

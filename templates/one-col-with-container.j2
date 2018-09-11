@@ -1,0 +1,39 @@
+{% extends "template.j2" %}
+{% import "includes/macros.j2" as macros %}
+{% import "includes/components.j2" as components %}
+{% block page_class %}{% endblock %}
+
+
+{% block content %}
+
+	{% if meta.profile_block %}
+
+		{{components.profile_block(api=true)}}
+
+	{% endif %}
+
+	<div class='[ wrapper ]'>
+		<div class='[ section gutters ]'>
+		 	{{ macros.parse_blocks( data ) }}
+		 </div>
+	</div>
+
+	{% if meta.video_block %}
+
+		{{components.video_block(api=true)}}
+
+	{% endif %}
+
+	{% if meta.avatar_block %}
+
+		{{components.avatar_block(api=true)}}
+
+	{% endif %}
+
+	{% if meta.question_block %}
+
+		{{components.question_block(api=true)}}
+
+	{% endif %}
+
+{% endblock %}

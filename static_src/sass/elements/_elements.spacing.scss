@@ -1,0 +1,68 @@
+// ============================================================================
+// Spacing
+// ============================================================================
+
+body,
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+dl, dd, ol, ul,
+form, fieldset, legend,
+figure,
+table, th, td, caption,
+hr {
+    margin:  0;
+    padding: 0;
+}
+
+//default inset spacing
+@mixin inset-space {
+    padding: $spacing-l;
+
+    @include medium {
+        padding: $spacing-xl;
+    }
+}
+
+//default stacked space add to block elements
+@mixin stack-space($spacing: $spacing-l) {
+    margin-bottom: $spacing;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@mixin stack-component($spacing: 3.5rem) {
+    margin-bottom: $spacing;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+}
+
+// sass-lint:disable single-line-per-selector
+h1, h2, h3, h4, h5, h6,
+ul, ol, dl,
+.block-element,
+blockquote, address,
+table,
+fieldset, figure,
+pre {
+    @include stack-space();
+
+    &:empty {
+        display: none;
+    }
+}
+
+p, li { @include stack-space($spacing-s); }
+
+ul, ol,
+dd {
+    margin-left: $spacing-s;
+}
+
+h3, h4, h5 {
+    @include stack-space($spacing);
+}

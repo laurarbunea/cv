@@ -1,0 +1,73 @@
+{
+    "meta": {
+        "template": "one-col.j2",
+        "title": "0.0 Home - unauthenticated",
+        "header_title": "Hi. How can we help?",
+        "question_block": false,
+        "user": null
+    },
+    "data": [
+        {
+            "type":"cta-block",
+            "heading": "Xero Support for you",
+            "description": "Log in to see your cases, save articles, start discussions and get better article suggestions",
+            "cta": "Login",
+            "cta_theme": "secondary"
+        },
+        {
+            "type":"topic-block",
+            "heading":"Popular topics",
+            "theme":"enhance",
+            "topics":[
+                {
+                    "title":"Pay and manage employees",
+                    "description":"Set up customise payroll in Xero. Organise payment, payslips, superannuation, leave, holidays and"
+                },
+                {
+                    "title":"Bank feeds",
+                    "description":"Set up customise payroll in Xero. Organise payment, payslips, superannuation, leave, holidays and"
+                },
+                {
+                    "title":"Pay and manage employees",
+                    "description":"Set up customise payroll in Xero. Organise payment, payslips, superannuation, leave, holidays and"
+                },
+                {
+                    "title":"Pay and manage employees",
+                    "description":"Set up customise payroll in Xero. Organise payment, payslips, superannuation, leave, holidays and"
+                },
+                {
+                    "title":"Bank feeds",
+                    "description":"Set up customise payroll in Xero. Organise payment, payslips, superannuation, leave, holidays and"
+                },
+                {
+                    "title":"Pay and manage employees",
+                    "description":"Set up customise payroll in Xero. Organise payment, payslips, superannuation, leave, holidays and"
+                }
+            ],
+            "load_more": true
+        },
+        {
+            "type":"discussion-block",
+            "heading":"Popular answers",
+            "load_more": false,
+            "answer":[
+                {
+                    "type":"heading-breadcrumb-text-set",
+                    "api":true
+                },
+                {
+                    "type":"heading-breadcrumb-text-set",
+                    "api":true
+                },
+                {
+                    "type":"heading-breadcrumb-text-set",
+                    "api":true
+                },
+                {
+                    "type":"heading-breadcrumb-text-set",
+                    "api":true
+                }
+            ]
+        }
+    ]
+}

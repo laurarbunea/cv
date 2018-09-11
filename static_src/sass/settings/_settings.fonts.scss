@@ -1,0 +1,48 @@
+// -----------------------------------------------------------------------------
+// Typography
+// -----------------------------------------------------------------------------
+
+// National
+// ---------------------
+$folder-webfonts: '../fonts/';
+
+@font-face {
+    font-family: 'National';
+    font-weight: 300;
+    font-style: normal;
+    src: url('#{$folder-webfonts}National-Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'National';
+    font-weight: 500;
+    font-style: normal;
+    src: url('#{$folder-webfonts}National-Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'National';
+    font-weight: normal;
+    font-style: normal;
+    src: url('#{$folder-webfonts}National-Regular.otf') format('opentype');
+}
+
+
+// Helvetica Neue
+// ---------------------
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    font-weight: normal;
+    font-style: normal;
+    src: url('#{$folder-webfonts}HelveticaNeueLTCom-Roman.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    font-weight: 700;
+    font-style: normal;
+    src: url('#{$folder-webfonts}HelveticaNeueLTCom-Bd.ttf') format('truetype');
+}
+
+

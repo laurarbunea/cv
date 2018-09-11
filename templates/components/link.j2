@@ -1,0 +1,15 @@
+{% import "includes/components.j2" as components %}
+
+{% if item.api %}
+
+	{% set item = {
+        "type": "list",
+        "text": "I am a link",
+        "url": "/example/"
+    } %}
+
+{% endif %}
+
+<a href="{{ item.url }}" {% if item.class %}class="{{ item.class }}"{% endif %}>
+	{{ item.text }}
+</a>

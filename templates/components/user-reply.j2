@@ -1,0 +1,58 @@
+{# include the components and the macro files #}
+{% import "includes/macros.j2" as macros %}
+{% import "includes/components.j2" as components %}
+{% if item.answer %}
+	{% set item = item.answer %}
+{% endif %}
+
+{% if item.api %}
+
+	{% set item = {
+		"type":"component-name",
+		"title":"I am a title",
+		"profile":{
+	        "name": "Marcus Whitler",
+	        "image": "placeholder.jpg",
+	        "initials": "MW",
+	        "job": "Xero user",
+	        "description": "Xero user for 3 years",
+	        "location": "Wellington, New Zealand",
+	        "answer_count": 98,
+	        "url": "/pages/profile/",
+	        "answer_url": "/pages/discussion/"
+	    }
+	} %}
+
+{% endif %}
+
+{% call components.inset_block(theme="content", class="user-answer component" ) %}
+
+	<div class="[ grid grid--row-spacing ]">
+
+		<div class="[ width-3/4 ]">
+
+			{{ components.profile_popover(profile=item.profile) }}
+
+		</div>
+
+		<div class="[ width-1/4 ] u-align-right">
+
+			{{ components.overflow(profile=item.profile) }}
+
+		</div>
+
+	</div>
+
+	<div class="[ grid grid--row-spacing ]">
+
+	    <div class="[ width-full ]">
+			{{ components.field_richtext(placeholder="Type something", maxlength="100") }}
+	    </div>
+
+		<div class="[ width-full ] u-clear">
+			{{ components.btn(href="#", text="Post answer", theme="secondary", class="u-align-right") }}
+		</div>
+
+	</div>
+
+{% endcall %}

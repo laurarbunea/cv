@@ -1,0 +1,100 @@
+$header-gutter: 1.875rem;
+$header-padding: 5px;
+
+.header {
+    border-top: 4px solid $color-brand-primary;
+    border-bottom: 1px solid $color-grey-xlight;
+    padding: $header-gutter / 2;
+
+    @include medium {
+        padding: $header-gutter;
+    }
+}
+    .header--large { border-bottom: 0; }
+
+.header__logo {
+    display: inline-block;
+    padding: $header-padding 0;
+    white-space: nowrap;
+
+    > svg {
+        vertical-align: middle;
+    }
+}
+
+.header__title {
+    display: inline-block;
+    line-height: 40px;
+    padding-left: 10px;
+    margin-left: 10px;
+    border-left: 1px solid $color-blue-dark;
+    vertical-align: middle;
+}
+
+.header__menu {
+    position: relative;
+    text-align: right;
+}
+
+.header__link {
+    display: inline-block;
+    line-height: 50px;
+    margin-right: $header-gutter / 2;
+    font-family: $font-family;
+    font-weight: $font-weight-medium;
+    color: $color-blue-dark;
+    text-transform: uppercase;
+
+    @include medium {
+        margin-right: $header-gutter;
+    }
+}
+
+.header__profile {
+    display: block;
+    position: relative;
+    float: right;
+    padding: $header-padding 0;
+
+    .badge {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(15%, -15%);
+    }
+}
+
+.header .search-bar {
+    @include xsmall {
+        margin-top: $header-padding;
+    }
+}
+
+$masthead-spacing: 42;
+$masthead-spacing-small: 24;
+
+.header__masthead {
+    padding: rem($masthead-spacing-small) 0;
+
+    @include medium {
+        padding: rem($masthead-spacing) 0 rem($masthead-spacing + 50);
+        background-image: url('/static/images/illustration-placeholder.png');
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: 100% 60%;
+        border-bottom: 1px solid $color-grey-xlight;
+    }
+}
+
+.header__masthead__title {
+    text-align: center;
+    color: $color-brand-primary;
+
+    @include medium {
+        margin-bottom: rem(60);
+    }
+}
+
+.header__masthead .search-bar {
+    margin: 0 auto;
+}

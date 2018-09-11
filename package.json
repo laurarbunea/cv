@@ -1,0 +1,103 @@
+{
+  "name": "xero-style-guide",
+  "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/springload/xero-style-guide"
+  },
+  "eslintConfig": {
+    "extends": "plugin:springload/recommended"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "> 1%",
+              "IE 11"
+            ]
+          },
+          "modules": false
+        }
+      ]
+    ],
+    "env": {
+      "test": {
+        "presets": [
+          [
+            "env",
+            {
+              "targets": {
+                "browsers": [
+                  "> 1%",
+                  "IE 11"
+                ]
+              }
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-jest": "^20.0.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.3.2",
+    "browser-sync": "^2.18.8",
+    "eslint": "^3.19.0",
+    "eslint-plugin-springload": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-json-to-sass": "0.0.4",
+    "gulp-pleeease": "^2.0.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-shell": "^0.6.3",
+    "gulp-size": "^2.1.0",
+    "gulp-sourcemaps": "^2.4.1",
+    "gulp-svgmin": "^1.1.2",
+    "gulp-svgstore": "^6.1.0",
+    "gulp-theo": "^1.0.0-alpha.5",
+    "gulp-util": "^3.0.8",
+    "jest": "^20.0.1",
+    "sass-lint": "^1.12.0",
+    "sass-module-importer": "^1.4.0",
+    "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "element-closest": "^2.0.2",
+    "object-assign": "^4.1.1",
+    "quicktube": "^3.0.0"
+  },
+  "scripts": {
+    "start": "npm run lint:versions -s && npm run watch -s",
+    "linter:js": "eslint",
+    "linter:sass": "sass-lint -v -q",
+    "lint:versions": "NVM_VERSION=$(cat .nvmrc); NODE_VERSION=$(node --version); echo $NODE_VERSION | grep -q $NVM_VERSION && echo \"✓ running node $NODE_VERSION - all clear\" || (echo \"✗ running node $NODE_VERSION - expected $NVM_VERSION. Use nvm to install the right version.\" && exit 1)",
+    "lint:js": "npm run linter:js -s -- .",
+    "lint:sass": "npm run linter:sass -s",
+    "lint": "npm run lint:versions -s && npm run lint:js -s && npm run lint:sass -s",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "test:watch:coverage": "jest --watch --coverage",
+    "test:ci": "./bin/ci-test.sh",
+    "dist": "NODE_ENV=production gulp build",
+    "build": "NODE_ENV=development gulp build",
+    "report:coverage": "open coverage/lcov-report/index.html",
+    "report:build": "NODE_ENV=production webpack --config webpack/webpack.config.prod.js --profile --json > webpack-stats.json",
+    "js": "gulp js",
+    "css": "gulp css",
+    "svg": "gulp svg",
+    "wrangler-win": "python wrangler build content www && xcopy /s /y www\\content\\* www",
+    "build-win": "python wrangler build content www && xcopy /s /y www\\content\\* www && gulp css && gulp svg && gulp js",
+    "static-win": "gulp css && gulp svg && gulp js",
+    "watch": "NODE_ENV=development gulp watch",
+    "deploy:preview": "git push origin master:deploy/preview",
+    "deploy:production": "git push origin master:deploy/production"
+  }
+}

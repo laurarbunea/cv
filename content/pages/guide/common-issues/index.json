@@ -1,0 +1,77 @@
+{
+    "meta": {
+        "template": "guide.j2",
+        "title": "1.2.11 Common Issues"
+    },
+    "data": [
+        {
+            "type": "overview",
+            "api":true
+        },
+        {
+            "type": "rich-text",
+            "data":[
+                {
+                    "type": "heading",
+                    "level": "h3",
+                    "data": "How to know the batch payment has failed"
+                },
+                "In iaculis metus ac nibh tempus, nec elementum orci pulvinar. Ut sed dignissim neque. Etiam eleifend libero ut est vestibulum mollis. Etiam dapibus dapibus dolor at mattis. Aenean at enim molestie, tempus nunc at, viverra lorem. Quisque non facilisis enim. Aliquam eros lorem, fermentum blandit tempus et, facilisis sit amet elit. Fusce dictum ex quis ex congue, at commodo nibh eleifend. Proin dignissim gravida purus at gravida."
+            ]
+
+        },
+        {
+            "type": "rich-text",
+            "data":[
+                {
+                    "type": "heading",
+                    "level": "h3",
+                    "data": "How to know the batch payment has failed"
+                },
+                "In iaculis metus ac nibh tempus, nec elementum orci pulvinar. Ut sed dignissim neque. Etiam eleifend libero ut est vestibulum mollis. Etiam dapibus dapibus dolor at mattis. Aenean at enim molestie, tempus nunc at, viverra lorem. Quisque non facilisis enim. Aliquam eros lorem, fermentum blandit tempus et, facilisis sit amet elit. Fusce dictum ex quis ex congue, at commodo nibh eleifend. Proin dignissim gravida purus at gravida."
+            ]
+
+        },
+        {
+            "type": "message",
+            "heading":"Tip",
+            "theme":"tip",
+            "data": [
+                "Content goes inside this block"
+            ]
+        },
+        {
+            "type": "rich-text",
+            "data":[
+                "Morbi ultricies mollis egestas. Nulla ut tincidunt enim. Proin feugiat condimentum nibh quis sodales. Nullam rhoncus mattis dolor, hendrerit fermentum libero consectetur non. Nullam vehicula, odio eu varius aliquam."
+            ]
+        },
+        {
+            "type": "rich-text",
+            "data":[
+                {
+                    "type": "heading",
+                    "level": "h3",
+                    "data": "How to know the batch payment has failed"
+                },
+                "Morbi ultricies mollis egestas. Nulla ut tincidunt enim. Proin feugiat condimentum nibh quis sodales. Nullam rhoncus mattis dolor, hendrerit fermentum libero consectetur non. Nullam vehicula, odio eu varius aliquam.",
+                {
+                    "type": "image",
+                    "api": "true"
+                }
+            ]
+        },
+        {
+            "type": "message",
+            "api":"true"
+        },
+        {
+            "type": "whats-next",
+            "api":true
+        },
+        {
+            "type": "feedback-buttons",
+            "api":true
+        }
+    ]
+}

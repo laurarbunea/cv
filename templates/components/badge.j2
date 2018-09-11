@@ -1,0 +1,15 @@
+{% import "includes/components.j2" as components %}
+
+{% if item.api %}
+
+	{% set item = {
+      "type": "badge",
+      "theme":"",
+      "text":"Open"
+    } %}
+
+{% endif %}
+
+<span class="badge{% if item.theme %} badge--{{item.theme}}{% endif %}">
+    {{item.text}}
+</span>

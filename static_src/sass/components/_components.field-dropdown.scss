@@ -1,0 +1,49 @@
+$width-arrow: 6px;
+
+.field-dropdown {
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: '';
+        right: rem(15);
+        top: 50%;
+        margin-top: -$width-arrow / 2;
+        width: 0;
+        height: 0;
+        font-size: 0;
+        line-height: 0;
+        border: $width-arrow solid transparent;
+        border-top-color: $color-grey-mid;
+        transition: transform .2s;
+        transform-origin: center 25%;
+    }
+    select {
+        padding-right: rem(32);
+    }
+
+    select::-ms-expand {
+        display: none;
+    }
+
+    select::-ms-clear {
+        display: none;
+    }
+    [disabled] {
+        background: $color-grey-light;
+    }
+}
+    .error > .field-dropdown select {
+        border-color: $color-field-error;
+    }
+
+    .field-dropdown--disabled::after {
+        border-top-color: $color-muted;
+    }
+
+    .field-dropdown--filter {
+        select {
+            border-color: $color-grey-xlight;
+            border-radius: 0;
+        }
+    }

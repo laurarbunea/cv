@@ -1,0 +1,43 @@
+// ============================================================================
+// Footer
+// ============================================================================
+
+.footer__title {
+    display: inline-block;
+    line-height: 40px;
+    padding-left: 10px;
+    margin-left: 10px;
+    border-left: 1px solid $color-white;
+    vertical-align: middle;
+}
+
+    .footer__topics-link {
+        line-height: 40px;
+        vertical-align: middle;
+    }
+
+    .footer__right-links {
+        > * {
+            float: right;
+        }
+    }
+    .footer__hr {
+        margin-top: 0;
+    }
+
+    .footer__link {
+        margin-right: 36px;
+    }
+
+    .footer__dropdown {
+        height: 42px;
+
+        select {
+            border: 0;
+            background-color: rgba(255, 255, 255, .05);
+            color: $color-grey-light;
+            text-transform: uppercase;
+            font-size: rem(12);
+            font-weight: $font-weight-bold;
+        }
+    }

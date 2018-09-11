@@ -1,0 +1,21 @@
+{
+    "meta": {
+        "template": "one-col.j2",
+        "title": "0.1 Error - Search results",
+        "pagination":false
+    },
+    "data": [
+        {
+            "type": "error-block",
+            "heading": "No results for \"Incorrect search term\"",
+            "statement":
+                "Here are terms that other people searched for that might help",
+            "components": [
+                {
+                    "type":"search-result-terms",
+                    "api":true
+                }
+            ]
+        }
+    ]
+}

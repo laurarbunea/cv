@@ -1,0 +1,33 @@
+{% if item.api %}
+
+	{% set item = {
+        "type": "list",
+         "data": [
+            "While in",
+            "list item two"
+        ],
+        "class":"",
+        "container":false
+    } %}
+
+{% endif %}
+
+{% if item.container %}
+    <div class="rich-text">
+{% endif %}
+
+<ul {% if item.class %}class="{{ item.class }}"{% endif %}>
+
+    {% for item in item.data %}
+
+        <li>
+            {{ item }}
+        </li>
+
+    {% endfor %}
+
+</ul>
+
+{% if item.container %}
+    </div>
+{% endif %}

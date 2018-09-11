@@ -1,0 +1,31 @@
+{
+    "meta": {
+        "template": "search.j2",
+        "title": "5.0.6 Incorrect search term"
+    },
+    "data": [
+        {
+            "type":"rich-text",
+            "data":[
+                {
+                    "type":"heading",
+                    "level":"h2",
+                    "data":"Results for \"Correct search term\""
+                },
+                {
+                    "type":"heading",
+                    "level":"h3",
+                    "data":"Search instead for <a href=''>\"Incorrect search term\"</a>"
+                }
+            ]
+        },
+        {
+            "type":"search-result-featured",
+            "api":true
+        },
+        {
+            "type":"search-results",
+            "api":true
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+
+.title { margin-bottom: $spacing-xl; }
+
+    .title__heading { padding-bottom: $spacing-s; }
+
+    .title__button { margin-top: 10px; }
+
+    .title__subtitle {
+        @include font-smoothing;
+        display: inline-block;
+        margin-right: $spacing-xs;
+        color: $color-grey-dark;
+        font-family: $font-family;
+
+        .field-checkbox {
+            display: inline;
+        }
+
+        .form-field__label {
+            margin-bottom: 0;
+            vertical-align: baseline;
+            font-size: inherit;
+            font-family: inherit;
+        }
+    }

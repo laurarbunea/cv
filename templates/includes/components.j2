@@ -1,0 +1,57 @@
+{# Internal macro to be used by component macro definitions. #}
+{% macro _component(component, item, children) -%}{% include "components/" + component.id + ".j2" %}{%- endmacro %}
+
+
+{# {% import "components.html" as components %} #}
+{# Example: {{ components.button(icon="logo") }} #}
+
+{% macro example() %}{{ _component({ 'id': 'example' }, kwargs, caller()) }}{% endmacro %}
+
+{% macro section() %}{{ _component({ 'id': 'section' }, kwargs, caller()) }}{% endmacro %}
+{% macro container() %}{{ _component({ 'id': 'container' }, kwargs, caller()) }}{% endmacro %}
+{% macro heading() %}{{ _component({ 'id': 'heading' }, kwargs, caller()) }}{% endmacro %}
+{% macro list() %}{{ _component({ 'id': 'list' }, kwargs, caller()) }}{% endmacro %}
+{% macro list_ordered() %}{{ _component({ 'id': 'list_ordered' }, kwargs, caller()) }}{% endmacro %}
+{% macro p() %}{{ _component({ 'id': 'p' }, kwargs, caller()) }}{% endmacro %}
+{% macro image() %}{{ _component({ 'id': 'image' }, kwargs, caller()) }}{% endmacro %}
+{% macro icon() %}{{ _component({ 'id': 'icon' }, kwargs, caller()) }}{% endmacro %}
+{% macro icon_text() %}{{ _component({ 'id': 'icon-text' }, kwargs, caller()) }}{% endmacro %}
+{% macro btn() %}{{ _component({ 'id': 'btn' }, kwargs, caller()) }}{% endmacro %}
+{% macro badge() %}{{ _component({ 'id': 'badge' }, kwargs, caller()) }}{% endmacro %}
+{% macro media() %}{{ _component({ 'id': 'media' }, kwargs, caller()) }}{% endmacro %}
+{% macro avatar() %}{{ _component({ 'id': 'avatar' }, kwargs, caller()) }}{% endmacro %}
+{% macro breadcrumb() %}{{ _component({ 'id': 'breadcrumb' }, kwargs, caller()) }}{% endmacro %}
+{% macro pagination() %}{{ _component({ 'id': 'pagination' }, kwargs, caller()) }}{% endmacro %}
+{% macro video() %}{{ _component({ 'id': 'video' }, kwargs, caller()) }}{% endmacro %}
+{% macro rich_text() %}{{ _component({ 'id': 'rich-text' }, kwargs, caller()) }}{% endmacro %}
+{% macro field_input() %}{{ _component({ 'id': 'field-input' }, kwargs, caller()) }}{% endmacro %}
+{% macro field_autocomplete() %}{{ _component({ 'id': 'field-autocomplete' }, kwargs, caller()) }}{% endmacro %}
+{% macro field_dropdown() %}{{ _component({ 'id': 'field-dropdown' }, kwargs, caller()) }}{% endmacro %}
+{% macro field_checkbox() %}{{ _component({ 'id': 'field-checkbox' }, kwargs, caller()) }}{% endmacro %}
+{% macro field_richtext() %}{{ _component({ 'id': 'field-richtext' }, kwargs, caller()) }}{% endmacro %}
+{% macro overflow() %}{{ _component({ 'id': 'overflow' }, kwargs, caller()) }}{% endmacro %}
+{% macro tabs() %}{{ _component({ 'id': 'tabs' }, kwargs, caller()) }}{% endmacro %}
+{% macro popover() %}{{ _component({ 'id': 'popover' }, kwargs, caller()) }}{% endmacro %}
+{% macro collapse() %}{{ _component({ 'id': 'collapse' }, kwargs, caller()) }}{% endmacro %}
+
+{% macro header() %}{{ _component({ 'id': 'header' }, kwargs, caller()) }}{% endmacro %}
+{% macro footer() %}{{ _component({ 'id': 'footer' }, kwargs, caller()) }}{% endmacro %}
+{% macro sidebar() %}{{ _component({ 'id': 'sidebar' }, kwargs, caller()) }}{% endmacro %}
+{% macro search_bar() %}{{ _component({ 'id': 'search-bar' }, kwargs, caller()) }}{% endmacro %}
+{% macro heading_breadcrumb_text_set() %}{{ _component({ 'id': 'heading-breadcrumb-text-set' }, kwargs, caller()) }}{% endmacro %}
+{% macro profile_popover() %}{{ _component({ 'id': 'profile-popover' }, kwargs, caller()) }}{% endmacro %}
+{% macro title() %}{{ _component({ 'id': 'title' }, kwargs, caller()) }}{% endmacro %}
+{% macro search_result_terms() %}{{ _component({ 'id': 'search-result-terms' }, kwargs, caller()) }}{% endmacro %}
+{% macro user_answer() %}{{ _component({ 'id': 'user-answer' }, kwargs, caller()) }}{% endmacro %}
+{% macro user_reply() %}{{ _component({ 'id': 'user-reply' }, kwargs, caller()) }}{% endmacro %}
+{% macro csp_cases() %}{{ _component({ 'id': 'csp-cases' }, kwargs, caller()) }}{% endmacro %}
+{% macro csp_discussions() %}{{ _component({ 'id': 'csp-discussions' }, kwargs, caller()) }}{% endmacro %}
+
+
+{% macro inset_block() %}{{ _component({ 'id': 'inset-block' }, kwargs, caller()) }}{% endmacro %}
+{% macro cta_block() %}{{ _component({ 'id': 'cta-block' }, kwargs, caller()) }}{% endmacro %}
+{% macro question_block() %}{{ _component({ 'id': 'question-block' }, kwargs, caller()) }}{% endmacro %}
+{% macro video_block() %}{{ _component({ 'id': 'video-block' }, kwargs, caller()) }}{% endmacro %}
+{% macro avatar_block() %}{{ _component({ 'id': 'avatar-block' }, kwargs, caller()) }}{% endmacro %}
+{% macro profile_block() %}{{ _component({ 'id': 'profile-block' }, kwargs, caller()) }}{% endmacro %}
+{% macro search_results_more_block() %}{{ _component({ 'id': 'search-results-more-block' }, kwargs, caller()) }}{% endmacro %}

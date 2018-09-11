@@ -1,0 +1,53 @@
+{% import "includes/macros.j2" as macros %}
+{% import "includes/components.j2" as components %}
+
+{% if item.api %}
+
+	{% set item = {
+      "type": "breadcrumbs",
+      "data": [
+            {
+              "url": "#",
+              "link": "Link 1",
+              "link_color":"secondary",
+              "icon": "discussion"
+            },
+            {
+              "url": "#",
+              "link": "Link 2",
+              "link_color":"secondary"
+            }
+        ]
+    } %}
+
+{% endif %}
+
+<ul class="breadcrumb u-font-primary u-font-light">
+
+    {% for crumb in item.data %}
+
+        <li class="{{item.class}}">
+
+            <a href="{{ crumb.url }}" class="u-text-color-{{ crumb.link_color|default('grey-mid') }} {% if crumb.icon %}icon-text{% endif %}">
+                {% if crumb.icon %}
+                    {{ components.icon(icon=crumb.icon, size="icon--m", color="grey") }}
+                {% endif %}
+
+                {{ crumb.link }}
+            </a>
+
+            {% if crumb.link_color == "secondary" %}
+
+                {{ components.icon(icon="arrow-right", size="icon--s", color="blue") }}
+
+            {% else %}
+
+                {{ components.icon(icon="arrow-right", size="icon--s", color="grey") }}
+
+            {% endif %}
+
+        </li>
+
+    {% endfor %}
+
+</ul>

@@ -1,0 +1,8 @@
+.profile-popover__trigger {
+    @include h4;
+    font-family: $font-family;
+
+    .avatar {
+        margin-right: $spacing;
+    }
+}

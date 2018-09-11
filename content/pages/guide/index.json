@@ -1,0 +1,28 @@
+{
+    "meta": {
+        "template": "guide.j2",
+        "title": "1.2.0 Guide Explanation"
+    },
+    "data": [
+        {
+            "type": "overview",
+            "api":true
+        },
+        {
+            "type": "rich-text",
+            "api":true
+        },
+        {
+            "type": "rich-text",
+            "api":true
+        },
+        {
+            "type": "whats-next",
+            "api":true
+        },
+        {
+            "type": "feedback-buttons",
+            "api":true
+        }
+    ]
+}

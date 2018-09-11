@@ -1,0 +1,34 @@
+// ============================================================================
+// Messaging
+// ============================================================================
+
+.message {
+	border-left: 3px;
+	border-left-style: solid;
+
+	.u-current-color {
+		color: inherit;
+	}
+}
+
+//theming
+.t-message--warning {
+	background-color: lighten($color-brand-primary, 48%);
+	border-color: $color-brand-primary;
+
+	.message__heading {
+        color: $color-brand-primary;
+        font-weight: $font-weight-medium;
+	}
+}
+
+.t-message--tip {
+	border-color: $color-brand-secondary !important;
+	background-color: lighten($color-brand-secondary, 48%);
+
+	.message__heading {
+        color: $color-brand-secondary;
+        font-weight: $font-weight-medium;
+	}
+}
+

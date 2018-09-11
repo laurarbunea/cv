@@ -1,0 +1,25 @@
+{% import "includes/macros.j2" as macros %}
+{% import "includes/components.j2" as components %}
+
+{% if item.api %}
+
+	{% set item = {
+		"type":"video",
+        "id": "D3Kzcu_Hh9E",
+        "poster": "/static/images/placeholder.jpg",
+        "child_element": false
+	} %}
+
+{% endif %}
+
+<div class="quicktube {{item.class}} {% if item.child_element %}{% else %} component {% endif %}" data-quicktube="{{ item.id }}">
+    <div class="quicktube__video" data-quicktube-video></div>
+    <div data-quicktube-play="{{ item.id }}" class="quicktube__poster" data-quicktube-poster>
+        {% if item.poster %}
+            <img class="quicktube__poster-image" src="{{ item.poster }}" alt="" />
+        {% endif %}
+        <button class="btn quicktube__play quicktube__btn" type="button">
+            {{ components.icon(icon="play", title="Play", size="icon--56") }}
+        </button>
+    </div>
+</div>

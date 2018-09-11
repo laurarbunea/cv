@@ -1,0 +1,52 @@
+{
+    "meta": {
+        "template": "guide.j2",
+        "title": "1.2.8 Trouble shooting"
+    },
+    "data": [
+        {
+            "type": "overview",
+            "api":true
+        },
+        {
+            "type": "heading",
+            "level":"h3",
+            "data":"Scenario 1: Using a new organisation in Xero"
+        },
+        {
+            "type": "collapse",
+            "api":true
+        },
+        {
+            "type": "heading",
+            "level":"h3",
+            "data":"Scenario 2: Using a new organisation in Xero"
+        },
+        {
+            "type": "collapse",
+            "data":[
+                {
+                    "slug": "stacked-3",
+                    "step":false,
+                    "label": "stacked collapse",
+                    "content":true
+                },
+                {
+                    "slug": "stacked-4",
+                    "step":false,
+                    "label": "stacked collapse",
+                    "content":true
+                }
+            ]
+        },
+        {
+            "type": "whats-next",
+            "api":true
+        },
+        {
+            "type": "feedback-buttons",
+            "api":true
+        }
+
+    ]
+}

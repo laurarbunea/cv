@@ -1,0 +1,23 @@
+.info-block {
+    font-family: $font-family;
+    border-bottom: 1px solid $color-grey-xlight;
+}
+
+	.info-block__item {
+	    height: 50px;
+	}
+
+	.info-block__item--statistic {
+	    color: $color-brand-secondary;
+	    font-weight: $font-weight-light;
+	    line-height: 20px;
+	}
+
+	.info-block__item--icon {
+	    color: $color-brand-secondary;
+	}
+
+	.info-block__title {
+	    font-weight: $font-weight-bold;
+	    color: $color-grey-xdark;
+	}

@@ -1,0 +1,101 @@
+{
+    "meta": {
+        "template": "page-with-sidebar.j2",
+        "title": "3.0 Case creation",
+        "sidebar": {
+            "heading": "Start a discussion instead",
+            "list": [
+                {
+                  "url": "/pages/discussion-form/",
+                  "title": "Ask customers and professional contributors"
+                }
+            ]
+        }
+    },
+    "data": [
+        {
+            "type": "form",
+            "data":[
+                {
+                    "type": "rich-text",
+                    "data":[
+                        {
+                            "type":"heading",
+                            "level":"h2",
+                            "data":"Get in touch"
+                        },
+                        "Ask someone at Xero for extra support"
+                    ]
+                },
+                {
+                    "type": "field-autocomplete",
+                    "input_type": "text",
+                    "placeholder": "Type your question here",
+                    "label": "",
+                    "suggestions": [
+                        {
+                            "title": "Similar questions",
+                            "suggestions": [
+                                { "label": "Why did auto super batch payment fail?", "href": "/", "icon": "discussion" },
+                                { "label": "Getting an Auto Super batch payment failure code", "href": "/", "icon": "guide" },
+                                { "label": "How to set up auto super payments", "href": "/", "icon": "guide" }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "field-dropdown",
+                    "label": "",
+                    "placeholder": "Choose a topic",
+                    "options": [
+                        { "label": "Set up your organisation with payroll", "value": "1" },
+                        { "label": "Payroll in Xero in Australia", "value": "2" },
+                        { "label": "How superannuation in Xero works", "value": "3" }
+                    ]
+                },
+                {
+                    "type": "field-input",
+                    "input_type": "text",
+                    "placeholder": "Enter your organisation here",
+                    "label": ""
+                },
+                {
+                    "type": "field-checkbox",
+                    "label": "Invite Xero Support into your organisation",
+                    "help_text": "This will help us answer your question faster"
+                },
+                {
+                    "type": "field-richtext",
+                    "label": "",
+                    "placeholder": "Get better answer by providing as many details as possible"
+                }
+            ]
+        },
+        {
+            "type": "grid",
+            "col_spacing": true,
+            "row_spacing": true,
+            "width":"1/2",
+            "columns": [
+                {
+                    "data": [
+                        {
+                            "type": "profile-popover",
+                            "api": true
+                        }
+                    ]
+                },
+                {
+                    "data": [
+                        {
+                            "type": "btn",
+                            "text": "Send",
+                            "theme": "secondary",
+                            "class": "u-align-right"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

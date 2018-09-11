@@ -1,0 +1,18 @@
+{
+    "meta": {
+        "template": "one-col.j2",
+        "title": "0.0 Error - Regional"
+    },
+    "data": [
+        {
+            "type": "error-block",
+            "heading": "Not Found!",
+            "statement":
+                "The page you have requested is not available for this region. To view this page you will need to switch to one of the following regions:",
+            "region": "New Zealand",
+            "data": [
+                "Alternatively try using the search above or browse <a href='#'>All topics</a> to find what you're looking for."
+            ]
+        }
+    ]
+}

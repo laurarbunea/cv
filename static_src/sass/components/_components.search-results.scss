@@ -1,0 +1,17 @@
+// ============================================================================
+// Search Results
+// ============================================================================
+
+.search-results {
+	padding: $spacing-xl 0;
+    @include keyline(top);
+}
+    .search-results:last-child {
+        @include keyline;
+    }
+
+
+
+.search-term {
+	padding: $spacing-s;
+}

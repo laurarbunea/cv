@@ -1,0 +1,53 @@
+{% import "includes/macros.j2" as macros %}
+{% import "includes/components.j2" as components %}
+
+{%- if item.api -%}
+
+    {% set item = {
+        "type": "profile-popover",
+        "profile": {
+            "name":"Marcus Whitler",
+            "image": "placeholder.jpg",
+            "initials": "MW",
+            "job":"Xero user",
+            "description": "Xero user for 3 years",
+            "location": "Wellington, New Zealand",
+            "answer_count": 98,
+            "answer_url": "/pages/discussion/",
+        }
+    } %}
+
+{%- endif -%}
+
+<div class="profile-popover">
+    <div class="profile-popover__trigger u-clear">
+        {{ components.avatar(profile=item.profile, small=True, class="u-inline-block") }}
+        <p class="u-inline-block">
+            {% if item.profile.url %}
+                <a href="{{ item.profile.url }}">{{ item.profile.name }}</a>{% if item.profile.job %}<span> | {{ item.profile.job }}</span>{% endif %}
+            {% else %}
+                <span>{{ item.profile.name }}</span>{% if item.profile.job %}<span class='u-text-color-grey-dark'>| {{ item.profile.job }}</span>{% endif %}
+            {% endif %}
+        </p>
+    </div>
+
+    {% call components.popover(position="margin-left: -20px; margin-top: 10px;", arrow_position="left: 38px;") %}
+        <div class="u-text-color-grey-dark u-font-primary ">
+
+            {% call components.media(small=True, visual=[{ "type": "avatar", "profile": item.profile, "small": True }]) %}
+                <p>
+                    <span class="u-text-color-grey-xdark">{{ item.profile.name }}</span> <span>| {{ item.profile.job }}</span>
+                    <br>
+                    <span class="u-font-size-s">{{ item.profile.description }}</span>
+                </p>
+            {% endcall %}
+
+            <div class="u-font-book u-font-size--">
+                <p>{{ item.profile.location }}</p>
+                {% if item.profile.answer_count %}
+                    <p>provided <a href="{{ item.profile.answer_url }}">{{ item.profile.answer_count }}</a> best answers</p>
+                {% endif %}
+            </div>
+        </div>
+    {% endcall %}
+</div>

@@ -1,0 +1,61 @@
+
+{% import "includes/macros.j2" as macros %}
+{% import "includes/components.j2" as components %}
+
+{% if item.api %}
+
+	{% set item = {
+		"type":"error-block",
+		"heading":"Oops...We've lost you",
+		"statement":"You've somehow ended up in the middle of nowhere.",
+        "data": [
+            "Head <a href=\"/pages/home/\">home</a> or search above"
+        ]
+	} %}
+
+{% endif %}
+
+{% call components.container() %}
+
+	<div class='[ grid grid--center grid--row-spacing ]'>
+
+		<div class='[ width-full ]'>
+
+			<h2 class='u-text-color-primary'>
+				{{item.heading}}
+			</h2>
+			<p class="error__text">
+				{{item.statement}}
+			</p>
+
+        {% if item.region %}
+
+        </div>
+
+            <div class='[ width-full ]'>
+                {{ components.btn(href="#", text=item.region, theme='inverse', class="u-font-primary") }}
+            </div>
+
+        <div class='[ width-full ]'>
+
+        {% endif %}
+
+            <div class="error__text">
+                {{ macros.parse_blocks( item.data ) }}
+            </div>
+
+            {% if item.components %}
+                {{ macros.parse_blocks( item.components ) }}
+            {% endif %}
+
+        </div>
+
+        <div class='[ width-full ]'>
+            <div>
+                <img src="/static/images/illustration-placeholder.png">
+            </div>
+		</div>
+
+	</div>
+
+{% endcall %}

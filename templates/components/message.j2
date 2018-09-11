@@ -1,0 +1,26 @@
+{% import "includes/macros.j2" as macros %}
+{% import "includes/components.j2" as components %}
+
+{% if item.api %}
+
+	{% set item = {
+        "type": "message",
+        "heading":"Warning",
+        "theme":"warning",
+        "data": [
+            "Content goes inside this block"
+        ]
+    } %}
+
+{% endif %}
+
+
+{% call components.inset_block(theme="message--"+item.theme, class="message component" ) %}
+
+    <h4 class='message__heading'>
+        {{item.heading}}{{ components.icon(icon="lightbulb", size="icon--m") }}
+    </h4>
+
+	{{ macros.parse_blocks( item.data ) }}
+
+{% endcall %}

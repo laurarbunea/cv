@@ -1,0 +1,227 @@
+// ============================================================================
+// Collapse - hiding content
+// ============================================================================
+
+$color-collapse-border: $color-grey-mid;
+$collapse-spacing--numbered: 50;
+$collapse-color--numbered: $color-brand-secondary;
+$collapse-step-size: 36;
+
+.collapse {
+    border-bottom: 1px solid $color-collapse-border;
+}
+    .collapse.collapse--in {
+        padding-bottom: $spacing-l;
+    }
+
+    .collapse.collapse--numbered {
+        border-bottom: 0;
+    }
+
+
+
+.collapse__keyline {
+    height: 1px;
+    width: calc(100% - #{$collapse-spacing--numbered}px);
+    margin-left: #{$collapse-spacing--numbered}px;
+    background-color: $color-collapse-border;
+
+}
+
+.collapse--in > .collapse__keyline { height: 0; }
+
+.collapse__trigger {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    padding-top: rem(30);
+    padding-bottom: $spacing-l;
+    color: inherit;
+    cursor: pointer;
+}
+
+.collapse__step {
+    display: inline-block;
+    width: rem($collapse-step-size);
+    height: rem($collapse-step-size);
+    border-radius: 50%;
+    color: $color-grey-xdark;
+    font-weight: $font-weight-medium;
+    border: 1px solid currentcolor;
+    line-height: #{($collapse-step-size - 5)}px;
+    text-align: center;
+    vertical-align: baseline;
+}
+    .collapse--in > .collapse__trigger .collapse__step {
+        color: $color-white;
+        background-color: $collapse-color--numbered;
+    }
+
+
+.collapse__label {
+    font-weight: $font-weight-medium;
+}
+    .collapse--numbered > .collapse__trigger .collapse__label {
+        padding-left: #{$collapse-spacing--numbered - $collapse-step-size}px;
+    }
+
+
+.collapse__content {
+    display: none;
+}
+    .collapse--numbered > .collapse__content {
+        border-left: 3px solid $collapse-color--numbered;
+        $content--numbered-margin: 16;
+        margin-left: #{$content--numbered-margin}px;
+        padding-left: #{$collapse-spacing--numbered - $content--numbered-margin}px;
+    }
+
+    .collapse--in > .collapse__content {
+        display: block;
+        animation: fadeIn .5s $ease-out-primary;
+    }
+
+
+.collapse__arrow {
+    display: inline-block;
+    position: absolute;
+    width: 24px;
+    height: 12px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $color-grey-mid;
+}
+    // Create arrow lines
+    .collapse__arrow::before,
+    .collapse__arrow::after {
+        display: block;
+        position: absolute;
+        top: 50%;
+        width: 10px;
+        height: 2px;
+        background-color: currentColor;
+        content: '';
+    }
+
+    // Left hand arrow line
+    .collapse__arrow::before {
+        left: 4px;
+        transform: rotate(45deg);
+    }
+
+        .collapse--in > .collapse__trigger .collapse__arrow::before {
+            animation: upBefore .2s forwards;
+        }
+
+        .collapse--exit > .collapse__trigger .collapse__arrow::before {
+            animation: downBefore .2s forwards;
+        }
+
+
+    // Right hand arrow line
+    .collapse__arrow::after {
+        right: 4px;
+        transform: rotate(-45deg);
+    }
+        .collapse--in > .collapse__trigger .collapse__arrow::after {
+            animation: upAfter .2s forwards;
+        }
+
+        .collapse--exit > .collapse__trigger .collapse__arrow::after {
+            animation: downAfter .2s forwards;
+        }
+
+
+@mixin collapse-force-open {
+
+    .collapse__content { display: block; }
+
+    .collapse__title { cursor: default; }
+
+        .collapse__title:hover { text-decoration: none; }
+
+    .collapse__arrow { display: none; }
+}
+
+.no-js {
+    @include collapse-force-open;
+}
+
+
+@keyframes upBefore {
+    0% {
+        transform: rotate(45deg);
+    }
+
+    25% {
+        // To make sure the two lines don't cross when animating
+        transform: translateX(-2px);
+    }
+
+    50% {
+      animation-timing-function: $ease-out-primary;
+    }
+
+    100% {
+        transform: rotate(-45deg) translateX(0);
+    }
+}
+
+@keyframes upAfter {
+    0% {
+        transform: rotate(-45deg);
+        animation-timing-function: $ease-in-primary;
+    }
+
+    25% {
+        transform: translateX(2px);
+    }
+
+    50% {
+        animation-timing-function: $ease-out-primary;
+    }
+
+    100% {
+        transform: rotate(45deg) translateX(0);
+    }
+}
+
+@keyframes downBefore {
+    0% {
+        transform: rotate(-45deg);
+        animation-timing-function: $ease-in-primary;
+    }
+
+    25% {
+        transform: translateX(-2px);
+    }
+
+    50% {
+        animation-timing-function: $ease-out-primary;
+    }
+
+    100% {
+        transform: rotate(45deg) translateX(0);
+    }
+}
+
+@keyframes downAfter {
+    0% {
+        transform: rotate(45deg);
+        animation-timing-function: $ease-in-primary;
+    }
+
+    25% {
+        transform: translateX(2px);
+    }
+
+    50% {
+        animation-timing-function: $ease-out-primary;
+    }
+
+    100% {
+        transform: rotate(-45deg) translateX(0);
+    }
+}

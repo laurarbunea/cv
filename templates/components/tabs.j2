@@ -1,0 +1,77 @@
+
+{% import "includes/macros.j2" as macros %}
+{% import "includes/components.j2" as components %}
+
+
+{% if item.api %}
+
+	{% set item = {
+        "type": "tabs",
+        "theme": "secondary",
+        "large": false,
+		"tabs":[
+			{
+                "title":"Business Guides",
+				"content":[
+					"I am some content inside of Business Guides"
+				]
+			},
+			{
+				"title":"Practical Guides",
+				"content":[
+					"I am some content inside of Practical Guides"
+				]
+			},
+			{
+				"title":"Discussions",
+				"content":[
+					"I am some content inside of Discussions Guides"
+				]
+			}
+		]
+	} %}
+
+{% endif %}
+
+<div data-tabs class="tabs {% if item.large %}tabs--large{% endif %} ">
+    <div class="tabs__nav u-text-color-{{ item.theme }} ">
+        {% for tab in item.tabs %}
+
+            <a href="#{{ tab.title|slugify }}" data-tab-trigger class="btn btn--small tabs__btn">
+                <span class="tabs__btn-highlight">
+                    {% if tab.icon %}
+                        <span class="icon-text">
+                            {{ components.icon(icon=tab.icon, size="icon--xl", class="u-hidden@xsmall") }}
+                            <span>{{ tab.title }}</span>
+                        </span>
+                    {% else %}
+                        {{ tab.title }}
+                    {% endif %}
+                </span>
+            </a>
+
+        {% endfor %}
+    </div>
+
+    <div class="rich-text">
+
+        {% for tab in item.tabs %}
+
+            <div data-tab-content id="{{ tab.title|slugify }}" class="tabs__content">
+
+                {% if tab.content %}
+
+		            {{  macros.parse_blocks( tab.content ) }}
+
+		        {% else %}
+
+		            {{ children }}
+
+		        {% endif %}
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+</div>

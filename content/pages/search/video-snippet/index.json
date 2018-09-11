@@ -1,0 +1,17 @@
+{
+    "meta": {
+        "template": "search.j2",
+        "title": "5.0.3 Video snippet"
+    },
+    "data": [
+        {
+            "type":"search-result-featured",
+            "video":true,
+            "text":"Keeping a close eye on your cash flow is everything in small business. but sometimes it feels as though you need eight arms to manage your workload."
+        },
+        {
+            "type":"search-results",
+            "api":true
+        }
+    ]
+}

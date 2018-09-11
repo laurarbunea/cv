@@ -1,0 +1,15 @@
+.question-block__heading {
+    margin-bottom: $spacing-xxl;
+}
+
+.question-block__title {
+    margin-bottom: $spacing-xs;
+    font-weight: $font-weight-medium;
+    padding-left: $spacing;
+}
+
+.question-block__description {
+    color: $color-grey-dark;
+    font-family: $font-family;
+    padding-left: $spacing;
+}

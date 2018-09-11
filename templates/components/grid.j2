@@ -1,0 +1,23 @@
+{% import "includes/macros.j2" as macros %}
+
+{% if item.theme %}
+<div class='t-{{item.theme}}'>
+{% endif %}
+
+	<div class='[ grid{% if item.grid_type %}-{{item.grid_type}}{% endif %} {% if item.modifier %}grid--{{item.modifier}}{% endif %} {% if item.col_spacing %}grid--col-spacing{% endif %} {% if item.row_spacing %}grid--row-spacing{% endif %} ] {{item.class}}'>
+	    
+	    {% for column in item.columns %}
+	                    
+		    <div class="[ {% if item.width %}width-{{item.width}}{% endif %}{% if column.width %}width-{{column.width}}{% endif %} ] {% if column.theme %}t-{{column.theme}}{% endif %} {% if column.hide %} u-hidden@small {% endif %} {{column.class}}">  
+		       
+		        {{ macros.parse_blocks( column.data ) }}
+
+		    </div>
+
+	    {% endfor %}
+	 
+	</div>
+
+{% if item.theme %}
+</div>
+{% endif %}

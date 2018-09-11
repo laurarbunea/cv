@@ -1,0 +1,20 @@
+
+.profile-block {
+    border-bottom: 1px solid $color-grey-xlight;
+
+    .avatar {
+		margin-bottom:	$spacing-l;
+    }
+}
+
+	.profile-block__icon {
+	    margin-right: $spacing;
+	}
+
+	.profile-block__name-display-checkbox {
+	    margin-left: $spacing;
+	}
+
+	.profile-block__icon--social {
+	    vertical-align: top;
+	}

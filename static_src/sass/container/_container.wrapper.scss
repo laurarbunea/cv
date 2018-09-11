@@ -1,0 +1,14 @@
+// ============================================================================
+// Page wrappers
+// ============================================================================
+
+.wrapper {
+    @include clearfix;
+    max-width: $breakpoint-large;
+    margin-right: auto;
+    margin-left:  auto;
+}
+
+.site-content {
+	border:1em solid #f0f0f0;
+}

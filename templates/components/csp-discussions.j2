@@ -1,0 +1,106 @@
+{% import "includes/macros.j2" as macros %}
+{% import "includes/components.j2" as components %}
+
+{% if item.api %}
+
+    {% set item = {
+        "type":"csp-discussion",
+        "horizontal_align":"left",
+        "rows":[
+            {
+                "status":{
+                    "text":"assigning agent",
+                    "theme":""
+                },
+                "answers":"6",
+                "updated":"27 Nov 2016",
+                "text":"How do I reconcile super payments"
+            },
+             {
+                "status":{
+                    "text":"answered",
+                    "theme":"green"
+                },
+                "answers":"6",
+                "updated":"27 Nov 2016",
+                "text":"Why did auto super batch fail?"
+            },
+             {
+                "status":{
+                    "text":"action required",
+                    "theme":"orange"
+                },
+                "answers":"6",
+                "updated":"27 Nov 2016",
+                "text":"Auto batch fail ?"
+            },
+        ]
+    } %}
+
+{% endif %}
+
+<div class="table-scrollable-container u-space">
+
+    <table class="csp-table table--scrollable" width="100%">
+
+            <thead class="table__head">
+                <tr class="table__row table__row--bottom">
+
+                    <th width="40%" class="table__header-cell u-text-left">
+                         <div>
+                         {% set dropdown = {
+                            "placeholder": "All discussions",
+                            "options": [
+                                { "label": "Set up your organisation with payroll", "value": "1" },
+                                { "label": "Payroll in Xero in Australia", "value": "2" },
+                                { "label": "How superannuation in Xero works", "value": "3" },
+                                { "label": "Why did auto super batch payment fail?", "value": "4" },
+                                { "label": "Getting an Auto Super batch payment failure code", "value": "5" }
+                            ]
+                        } %}
+
+                            <div class='[ width-5/10 ]'>{{ components.field_dropdown(dropdown=dropdown)}}</div>
+                        </div>
+                    </th>
+
+                    <th width="20%" class="table__header-cell u-text-center">
+                         <p class="u-sub-heading u-font-size-s u-font-primary">Status</p>
+                    </th>
+
+                    <th width="20%" class="table__header-cell ">
+                         <p class="u-sub-heading u-font-size-s u-font-primary">answers</p>
+                    </th>
+
+                    <th width="20%" class="table__header-cell u-text-left">
+                         <p class="u-sub-heading u-font-size-s u-font-primary">Updated  {{ components.icon(icon="arrow-filter", size="icon--s") }}</p>
+                    </th>
+
+                </tr>
+            </thead>
+
+        <tbody class="table__body">
+
+        {% for row in item.rows %}
+            <tr class="table__row table__row--border table__row--bottom">
+                <td width="40%" class=" table__cell ">
+                    {{ components.heading_breadcrumb_text_set(api=true)}}
+                </td>
+                <td width="20%" class=" table__cell u-text-center">
+                    {{ components.badge(text=row.status.text, theme=row.status.theme )}}
+                </td>
+                 <td width="20%" class="table__cell u-text-center">
+                   <span class="icon-text u-sub-text">
+                        {{ components.icon(icon="discussion", size="icon--m", color="grey") }}
+                        {{ row.answers }}
+                    </span>
+                </td>
+                 <td width="20%" class=" table__cell u-text-left">
+                   <p class='u-sub-text'>{{row.updated}}</p>
+                </td>
+            </tr>
+
+        {% endfor %}
+
+        </tbody>
+    </table>
+</div>

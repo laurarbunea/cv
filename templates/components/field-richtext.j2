@@ -1,0 +1,31 @@
+{% import "includes/macros.j2" as macros %}
+{% import "includes/components.j2" as components %}
+
+{%- if item.api -%}
+
+	{% set item = {
+        "type": "field-input",
+        "placeholder": "Type something",
+        "label": "Example input field",
+        "help_text": "",
+        "error": "",
+        "maxlength": 100,
+	} %}
+
+{%- endif -%}
+
+<label class="form-field {% if item.error %} error{% endif %}">
+    {% if item.label %}
+        <span class="form-field__label">{{ item.label }}</span>
+    {% endif %}
+
+    {% if item.help_text %}
+        <span class="form-field__help">{{ item.help_text }}</span>
+    {% endif %}
+
+    <textarea class="field-richtext" rows="10" maxlength="{{ item.maxlength }}" placeholder="{{ item.placeholder }}"></textarea>
+
+    {% if item.error %}
+        <span class="form-field__error">{{ item.error }}</span>
+    {% endif %}
+</label>

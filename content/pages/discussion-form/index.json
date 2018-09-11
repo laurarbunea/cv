@@ -1,0 +1,65 @@
+{
+    "meta": {
+        "template": "page-with-sidebar.j2",
+        "title": "2.3 Start discussion"
+    },
+    "data": [
+        {
+            "type": "rich-text",
+            "data":[
+                {
+                    "type":"heading",
+                    "level":"h2",
+                    "data":"Get in touch"
+                },
+                "Ask customers and professional contributors"
+            ]
+        },
+        {
+            "type": "field-autocomplete",
+            "input_type": "text",
+            "placeholder": "Type your question here",
+            "label": "Hi Jamie, what would you like to know more about?",
+            "suggestions": [
+                {
+                    "title": "Similar questions",
+                    "suggestions": [
+                        { "label": "Why did auto super batch payment fail?", "href": "/", "icon": "discussion" },
+                        { "label": "Getting an Auto Super batch payment failure code", "href": "/", "icon": "guide" },
+                        { "label": "How to set up auto super payments", "href": "/", "icon": "guide" }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "field-dropdown",
+            "label": "Topic",
+            "placeholder": "Select topic",
+            "options": [
+                { "label": "Set up your organisation with payroll", "value": "1" },
+                { "label": "Payroll in Xero in Australia", "value": "2" },
+                { "label": "How superannuation in Xero works", "value": "3" }
+            ]
+        },
+        {
+            "type": "field-richtext",
+            "label": "Please describe your issue in detail",
+            "placeholder": "The more information you provide, the better we can help you"
+        },
+        {
+            "type": "section",
+            "data": [
+                {
+                    "type": "btn",
+                    "text": "Send",
+                    "theme": "secondary",
+                    "class": "u-align-right"
+                },
+                {
+                    "type": "profile-popover",
+                    "api": true
+                }
+            ]
+        }
+    ]
+}

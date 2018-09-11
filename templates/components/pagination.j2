@@ -1,0 +1,35 @@
+
+{% import "includes/macros.j2" as macros %}
+{% import "includes/components.j2" as components %}
+
+{% if item.api %}
+
+    {% set item = {
+        "type":"pagination",
+        "class": "",
+        "pages": 4,
+        "current_page": 1,
+    } %}
+
+{% endif %}
+
+
+<nav class="pagination {{ item.class }}">
+    <ul class="pagination__pages">
+        <li>
+            <a class="pagination-prev pagination--dormant">Prev</a>
+        </li>
+
+        {% for index in range(1, item.pages + 1) %}
+            <li>
+                <a href="#{{ index }}" class="pagination__page{% if index == item.current_page %} pagination--current{% endif %}">
+                    {{ index }}
+                </a>
+            </li>
+        {% endfor %}
+
+        <li>
+            <a class="pagination-next">Next</a>
+        </li>
+    </ul>
+</nav>

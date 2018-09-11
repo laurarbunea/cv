@@ -1,0 +1,88 @@
+// ============================================================================
+// Icon
+// ============================================================================
+
+.icon {
+    @include inline-block(middle);
+}
+
+svg > use {
+    fill: currentColor;
+}
+
+
+// ============================================================================
+// Icons sizes
+// ============================================================================
+
+
+//icon sizes
+
+.icon--s {
+	width: rem(8);
+    height: rem(8);
+}
+
+.icon--m {
+	width: rem(16);
+	height: rem(16);
+}
+
+.icon--18 {
+    width: rem(18);
+	height: rem(18);
+}
+
+.icon--l {
+	width: rem(20);
+	height: rem(20);
+}
+
+.icon--24 {
+    width: rem(24);
+	height: rem(24);
+}
+
+.icon--xl {
+	width: rem(30);
+	height: rem(30);
+}
+
+.icon--xxl {
+	width: rem(40);
+	height: rem(40);
+}
+
+.icon--56 {
+    width: rem(56);
+    height: rem(56);
+}
+
+.icon--xxxl {
+	width: rem(78);
+	height: rem(78);
+}
+
+// ============================================================================
+// Icons colours
+// ============================================================================
+
+.icon--orange {
+    color: $color-brand-primary;
+}
+
+.icon--blue {
+    color: $color-brand-secondary;
+}
+
+.icon--green {
+    color: $color-brand-tertiary;
+}
+
+.icon--grey {
+    color: $color-grey-mid;
+}
+
+.icon--grey-xdark {
+    color: $color-grey-xdark;
+}

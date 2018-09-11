@@ -1,0 +1,22 @@
+// ============================================================================
+// Spacing
+// ============================================================================
+$base-spacing: 1rem;
+
+$spacing-xxxs: $base-spacing * .125;
+$spacing-xxs: $base-spacing * .25;
+$spacing-xs: $base-spacing * .5;
+$spacing-s: $base-spacing * .75;
+$spacing: $base-spacing * 1;
+$spacing-l: $base-spacing * 1.5;
+$spacing-xl: $base-spacing * 2;
+$spacing-xxl: $base-spacing * 4;
+
+// Grid spacing
+$grid-spacing: $spacing-xl;
+
+//Gutters -- horizontal spacing
+$gutter-spacing: 6.5rem;
+
+//Sections -- Vertical spacing
+$section-spacing: $spacing-xxl;

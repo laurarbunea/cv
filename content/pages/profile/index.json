@@ -1,0 +1,21 @@
+{
+    "meta": {
+        "template": "profile.j2",
+        "title": "4.1.0 Profile",
+        "profile":true
+    },
+    "data": [
+        {
+            "type":"info-block",
+            "api":true
+        },
+        {
+            "type":"info-block",
+            "api":true
+        },
+        {
+            "type":"info-block",
+            "api":true
+        }
+    ]
+}

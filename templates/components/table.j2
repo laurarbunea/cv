@@ -1,0 +1,127 @@
+{% import "includes/macros.j2" as macros %}
+{% import "includes/components.j2" as components %}
+
+{% if item.api %}
+
+    {% set item = {
+        "type":"table",
+        "behaviour":"stacked",
+        "striped":true,
+        "theme":"highlight t-highlight--bg",
+        "data":{
+            "table_header":[
+                {
+                    "text":"Company"
+                },
+                {
+                    "text":"Contact"
+                },
+                {
+                    "text":"Country"
+                }
+            ],
+            "body":[
+                {
+                    "data":[
+                        {
+                            "cell":[
+								"Alfreds Futterkiste"
+							]
+                        },
+                        {
+                            "cell":[
+                                "Maria Anders"
+                            ]
+                        },
+                        {
+                            "cell":[
+                                "Germany"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "data":[
+                        {
+                            "cell":[
+                                "Centro comercial Moctezuma"
+                            ]
+                        },
+                        {
+                            "cell":[
+                                "Francisco Chang"
+                            ]
+                        },
+                        {
+                            "cell":[
+                                "Mexico"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "data":[
+                        {
+                            "cell":[
+                                "Ernst Handel"
+                            ]
+                        },
+                        {
+                            "cell":[
+                                "Roland Mendel"
+                            ]
+                        },
+                        {
+                            "cell":[
+                                "Austria"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    } %}
+
+{% endif %}
+
+
+{% if item.
+behaviour == 'scrollable' %}
+    <div class="table-scrollable-container u-space">
+{% endif %}
+
+<table class="table table--{{ item.behaviour }}{% if item.striped %}{% if item.behaviour == 'responsive' %} table--striped@medium{% else %} table--striped{% endif %}{% endif %}">
+    {% if item.data.table_header %}
+        <thead class="table__head">
+        <tr class="table__row">
+            {% for row in item.data.table_header %}
+                <th class=" table__header-cell">
+                     <p class="u-sub-heading u-font-size-s u-font-primary">{{row.text}}</p>
+                </th>
+            {% endfor %}
+        </tr>
+        </thead>
+    {% endif %}
+    <tbody class="table__body">
+    {% for row in item.data.body %}
+        <tr class="table__row">
+
+            {% for cell in row.data %}
+
+                {% if item.behaviour == 'responsive' and loop.first %}
+                    <td class="table__cell table__cell--title@small{% if cell.horizontal_align %} u-text-{{ cell.horizontal_align }}{% endif %}">
+                {% else %}
+                    <td class="table__cell"{% if item.body.table_header %} data-header="{{ item.body.table_header[loop.index0] }}"{% endif %}>
+                {% endif %}
+                           {{  macros.parse_blocks( cell.cell ) }}
+
+                    </td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% if item.
+behaviour == 'scrollable' %}
+    </div>
+{% endif %}

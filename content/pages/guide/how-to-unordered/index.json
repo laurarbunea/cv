@@ -1,0 +1,46 @@
+{
+    "meta": {
+        "template": "guide.j2",
+        "title": "1.2.4 How to - un ordered"
+    },
+    "data": [
+        {
+            "type": "overview",
+            "api":true
+        },
+        {
+            "type": "collapse",
+            "data":[
+                {
+                    "slug": "collapse-stacked-1",
+                    "step":false,
+                    "label": "Check your procing plan",
+                    "data":[
+                        "Before you begin, make sure your prcing plan includes payroll:",
+                        {
+                            "type": "list-ordered",
+                            "api": "true"
+                        },
+                        "If your pricing plan doesn't include payroll, you'll need to upgrade"
+                    ]
+                },
+                {
+                    "slug": "collapse-stacked-2",
+                    "step":false,
+                    "label": "Check your access to Xero payroll",
+                    "data":[
+                        "Content goes here"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "overview",
+            "api": "true"
+        },
+        {
+            "type": "feedback-buttons",
+            "api":true
+        }
+    ]
+}

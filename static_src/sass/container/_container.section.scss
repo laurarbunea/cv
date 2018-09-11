@@ -1,0 +1,54 @@
+// ============================================================================
+// Sections
+// ============================================================================
+
+
+$section: $section-spacing;
+$section-s: $section-spacing / 2;
+
+@mixin section-bottom {
+	padding-bottom: $section-s;
+
+    @include medium {
+        padding-bottom: $section;
+    }
+}
+
+@mixin section-top {
+	padding-top: $section-s;
+
+    @include medium {
+        padding-top: $section;
+    }
+}
+
+.section {
+    @include section-bottom;
+    @include section-top;
+}
+
+.section-top {
+	@include section-top;
+}
+
+.section-bottom {
+	@include section-bottom;
+}
+
+.section-content {
+    padding: $section-s 0;
+}
+
+.section--stacked {
+    & + .section--stacked {
+        padding-top: 0;
+    }
+}
+
+.section--no-top {
+    padding-top: 0;
+}
+
+.section--no-bottom {
+    padding-bottom: 0;
+}

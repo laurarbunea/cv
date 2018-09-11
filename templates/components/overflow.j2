@@ -1,0 +1,13 @@
+{% import "includes/macros.j2" as macros %}
+{% import "includes/components.j2" as components %}
+
+<div class="overflow">
+	{{ components.icon(icon="overflow") }}
+	{{ components.popover(position="position:absolute; top:30px; right: 0;", arrow_position="right: 10px;", menu=[
+	    { "label": "Edit" },
+	    { "label": "Save", "notifications": 0 },
+	    { "label": "Delete", "notifications": 0 },
+	    { "label": "Flag", "notifications": 0 },
+	    { "label": "Mute", "notifications": 0 },
+	]) }}
+</div>
