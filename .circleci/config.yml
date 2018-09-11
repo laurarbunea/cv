@@ -1,0 +1,55 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: springload/cici:2017.03.29
+        entrypoint: "/bin/bash"
+        environment:
+          - APPLICATION: springload/xero-style-guide
+    working_directory: '~/xero-style-guide'
+
+    steps:
+      - checkout
+
+      - run:
+          name: Install apt-get dependencies
+          working_directory: /
+          command: |
+            apt-get update
+            apt-get -y install curl
+            apt-get -y install awscli
+
+      - run:
+          name: Install npm and pip dependencies
+          command: >-
+            flock -x ~/xero-style-guide/package.json -c '/bin/bash -lcie "pyenv shell 2.7.12 && cd ~/xero-style-guide && pip install -r requirements.txt && nvm install && npm install"';
+
+      - run:
+          name: npm run dist
+          shell: /bin/bash -lcie
+          command: >-
+            echo -n "Waiting for npm install ... " &&
+            flock -x ~/xero-style-guide/package.json -c '/bin/bash -lcie "[ ! -f ~/xero-style-guide/npm-debug.log ] && pyenv shell 2.7.12 && cd ~/xero-style-guide && nvm use && npm run dist"'
+
+      - run:
+          name: front-end tests
+          shell: /bin/bash -lcie
+          command: >-
+            cd ~/xero-style-guide &&
+            pyenv shell 2.7.12 &&
+            nvm use &&
+            npm run lint
+
+      - deploy:
+          name: Deploy production
+          shell: /bin/bash -lcie
+          region: ap-southeast-2
+          command: >-
+            if [ "${CIRCLE_BRANCH}" == "deploy/production" ]; then
+              cd ~/xero-style-guide/www &&
+              echo 'Not implemented - here, deploy compiled project to appropriate environment';
+              exit $?
+            fi
+
+      - store_artifacts:
+          path: ~/xero-style-guide/www
