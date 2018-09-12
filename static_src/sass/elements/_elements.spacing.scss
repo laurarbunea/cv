@@ -66,3 +66,7 @@ dd {
 h3, h4, h5 {
     @include stack-space($spacing);
 }
+
+.stack-space {
+    @include stack-space(); 
+}

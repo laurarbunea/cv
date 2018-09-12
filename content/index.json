@@ -55,7 +55,6 @@
                     "data":[
                         {
                             "slug": "employment-1",
-                            "step":1,
                             "label": "Front-End Developer, Springload, Wellington (5 years)",
                             "data":[
                                 "<strong>Nov 2012 - Nov 2017</strong>",
@@ -65,7 +64,6 @@
                         },
                         {
                             "slug": "employment-2",
-                            "step":2,
                             "label": "Web Developer, Zing Design, Wellington (1 year)",
                             "data":[
                                 "<strong>Jan 2012 - Nov 2012</strong>",
@@ -87,9 +85,14 @@
                 {
                     "type": "heading",
                     "level":"h5",
+                    "class":"mb-m",
                     "data":"Double Diploma in Architectural Draughting"
                 },
-                "Natcoll Design Technology, 2011-2012",
+                {
+                    "type": "p",
+                    "class":"stack-space",
+                    "data":"Natcoll Design Technology, 2011-2012"
+                },
                 {
                     "type": "heading",
                     "level":"h5",
