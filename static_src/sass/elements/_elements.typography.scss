@@ -64,20 +64,20 @@ h6 {
 
 p:empty { display: none; }
 
-hr {
+/*hr {
     margin-top: $spacing-l;
     margin-bottom: $spacing-l;
     @include medium {
         margin-top: $spacing-xl;
         margin-bottom: $spacing-xl;
     }
-}
+}*/
 
 hr {
     border-top: 0;
     border-right: 0;
     border-left: 0;
-    border-color: $color-grey-mid;
+    border-color: $color-grey-light;
     margin: $spacing 0;
     @include medium {
         margin: $spacing-xl 0;

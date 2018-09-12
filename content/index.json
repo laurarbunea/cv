@@ -99,6 +99,9 @@
             ]
         },
         {
+            "type": "hr"
+        },
+        {
             "type": "rich-text",
             "data": [
                 "References available on request",
