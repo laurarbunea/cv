@@ -21,6 +21,7 @@
         },
         {
             "type": "rich-text",
+            "class":"key-skills",
             "data": [
                 {
                     "type": "heading",
@@ -44,6 +45,7 @@
         },
         {
             "type": "rich-text",
+            "class":"employment-history",
             "data": [
                 {
                     "type": "heading",
@@ -58,7 +60,7 @@
                             "label": "Front-End Developer, Springload, Wellington (5 years)",
                             "data":[
                                 "<strong>Nov 2012 - Nov 2017</strong>",
-                                "I build front-end code for responsive websites and applications, help our growing front-end team write scalable maintainable CSS, and ensure websites are built in an accessible and progressively enhanced manner. Key projects include Xero internal Customer Support Platform, <a href='https://www.nzta.govt.nz/'>NZTA</a>, <a href='https://www.nzonair.govt.nz/'>NZ on Air</a> and the <a href='https://www.kiwibank.co.nz/'>Kiwibank</a> public site."
+                                "I build front-end code for responsive websites and applications, help our growing front-end team write scalable maintainable CSS, and ensure websites are built in an accessible and progressively enhanced manner. Key projects include Xero internal Customer Support Platform, <a href='https://www.nzta.govt.nz/'>NZTA</a>, <a href='https://www.nzonair.govt.nz/'>NZ on Air</a> and the <a href='https://www.kiwibank.co.nz/'>Kiwibank</a> public site all of which were built with pattern librarys."
                                
                             ]
                         },
@@ -108,7 +110,7 @@
             "type": "rich-text",
             "data": [
                 "References available on request",
-                "<a href='laura-bunea-cv-2018.pdf'>Download this as PDF</a>"
+                "<a href='static/laurabunea.pdf' class='hide-on-print'>Download this as PDF</a>"
             ]
         }
     ]

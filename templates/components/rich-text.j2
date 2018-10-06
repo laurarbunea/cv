@@ -1,7 +1,7 @@
 {% import "includes/macros.j2" as macros %}
 {% import "includes/components.j2" as components %}
 
-<div class='rich-text component'>
+<div class='rich-text component {{item.class}}'>
 
 	{% if item.data %}
 		{{ macros.parse_blocks( item.data ) }}

@@ -13,6 +13,17 @@
 //   ========================================================================== */
 
 @media print {
+    body {
+        margin:0;
+        padding:0;
+        background: white; 
+    }
+
+    p, li {
+        font-size: 14px; 
+        line-height: 1.41;
+    }
+
     *,
     *::before,
     *::after {
@@ -24,7 +35,7 @@
 
     a,
     a:visited {
-        text-decoration: underline;
+        //text-decoration: underline;
     }
 
     a[href]::after {
@@ -70,4 +81,14 @@
     h3 {
         page-break-after: avoid;
     }
+
+    .hide-on-print { display: none!important; }
+
+    .collapse__content { display: block; }
+    .collapse { border-bottom: 1px solid #ffffff; }
+    .component { margin-bottom: 40px!important; }
+    .site-content { border: 1px solid #ffffff!important; }
+    li { margin-bottom:10px!important;}
+    .key-skills {page-break-after: always;}
+    .employment-history {margin-top:30px;}
 }
