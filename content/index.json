@@ -32,7 +32,7 @@
                     "type": "list",
                     "data":[
                         "Excellent grasp of CSS architecture at scale (BEM, ITCSS).",
-                        "Extensive knowledge of Pattern Libraries, Style guides, Component Libraries .",
+                        "Extensive knowledge of Pattern Libraries, Style guides, Component Libraries.",
                         "Ability to build rich interactions through CSS and progressively enhanced vanilla JavaScript.",
                         "Proficient at working with various templating languages (Jinja2, Django, Twig).",
                         "Experience writing ES6/ES2015 JavaScript, using Node-based tooling (Babel, module bundlers).",
@@ -58,14 +58,14 @@
                 {
                     "type": "heading",
                     "level":"h4",
-                    "data":"Front-End Developer, Springload, Wellington (5 years)"
+                    "data":"Front-end Developer, Springload, Wellington (5 years)"
                 },
                 {
                     "type": "heading",
                     "level":"h5",
                     "data":"Nov 2012 - Nov 2017"
                 },
-                "I built front-end code for responsive websites and applications, helped our front-end team write scalable, maintainable CSS, and ensured that websites were built in an accessible and progressively enhanced manner. Key projects included Xero's internal Customer Support Platform, <a href='https://www.nzta.govt.nz/'>NZTA</a>, <a href='https://www.nzonair.govt.nz/'>NZ on Air</a> and the <a href='https://www.kiwibank.co.nz/'>Kiwibank</a> public site all of which were built with pattern libraries.",
+                "I built front-end code for responsive websites and applications, helped our front-end team write scalable, maintainable CSS, and ensured that websites were built in an accessible and progressively enhanced manner. Key projects included Xero's internal Customer Support Platform, <a href='https://www.nzta.govt.nz/'>NZTA</a>, <a href='https://www.nzonair.govt.nz/'>NZ on Air</a> and the <a href='https://www.kiwibank.co.nz/'>Kiwibank</a> public site, all of which were built with pattern libraries.",
                 {
                     "type": "hr"
                 },
@@ -79,7 +79,7 @@
                     "level":"h5",
                     "data":"Jan 2012 - Nov 2012"
                 },
-                "Responsible for building responsive websites, email templates, and WordPress content management systems. We were a very small team so it was important for me to be on top of new technologies and ideas as the industry developed. This helped me collaborate with our designer to provide better project design concepts",
+                "Responsible for building responsive websites, email templates, and WordPress sites. We were a very small team so it was important for me to be on top of new technologies and ideas as the industry developed. This helped me collaborate with our designer to provide better project design concepts.",
                 {
                     "type": "hr"
                 }
